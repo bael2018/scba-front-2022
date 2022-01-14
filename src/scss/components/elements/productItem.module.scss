@@ -1,0 +1,103 @@
+
+.item{
+    width: 19%;
+    margin: 0 .5%;
+    margin-bottom: 30px;
+
+    &_alt{
+        width: 32% !important;
+
+        .item_image{
+            height: 400px;
+
+            span{
+                right: -45px;
+                padding: 10px;
+                font-size: 25px;
+            }
+
+            span:nth-child(2){
+                top: 70px;
+            }
+        }
+    }
+
+    &_image{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        span{
+            position: absolute;
+            background: yellow;
+            right: -30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 5px;
+            transition: .3s;
+            font-size: 20px;
+            top: 15px;
+            border-radius: 5px;
+
+            & svg{
+                transition: .3s;
+            }
+
+            &:hover svg{
+                transform: scale(1.1);
+            }
+        }
+
+        span:nth-child(2){
+            top: 55px;
+        }
+    }
+
+    &:hover &_image span{
+        right: 15px;
+    }
+
+    &_body{
+        margin-top: 15px;
+
+        h3{
+            margin: 0px;
+            font-size: 23px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: white;
+        }
+
+        a{
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            padding: 15px 0;
+            color: white;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: .3s;
+            border: none;
+            border: 1px solid white;
+        }
+    }
+
+    &:hover &_body a{
+        background: yellow;
+        font-weight: bold;
+        border: 1px solid yellow;
+        color: #292929;
+    }
+}

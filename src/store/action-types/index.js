@@ -1,0 +1,12 @@
+
+export const rootActionTypes = {
+    // Currency
+    CURRENCY_TYPE: 'CURRENCY_TYPE',
+    // Product
+    MAX_PRICE: 'MAX_PRICE',
+    MIN_PRICE: 'MIN_PRICE',
+    PRODUCT_VIEW_SMOLL: 'PRODUCT_VIEW_SMOLL',
+    PRODUCT_VIEW_LARGE: 'PRODUCT_VIEW_LARGE',
+    PRICE_TYPE: 'PRICE_TYPE',
+    ZOOM_IMAGE: 'ZOOM_IMAGE'
+}

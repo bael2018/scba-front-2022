@@ -1,0 +1,25 @@
+
+.nav_child_active{
+    &::before{
+        height: 100% !important;
+    }
+    
+    span{
+        color: #292929 !important;
+
+        svg{
+            color: #292929 !important;
+        }
+    }
+}
+
+.footer_child_active{
+    &::before{
+        left: 0% !important;
+        width: 100% !important;
+    }
+
+    &{
+        color: yellow !important;
+    }
+}

@@ -1,0 +1,36 @@
+
+.bread{
+    margin-top: 30px;
+
+    a{
+        margin-right: 6px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        transition: .3s;
+
+        span{
+            margin-left: 6px;
+        }
+
+        &:hover{
+            color: yellow;
+        }
+        
+        &:hover span{
+            color: white;
+        }
+
+    }
+
+    &Active{
+        pointer-events: none;
+        text-decoration: none;
+
+        a{
+            color: yellow;
+        }
+    }
+
+}
