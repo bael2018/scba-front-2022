@@ -6,7 +6,7 @@ import { Currency } from './Currency'
 import { Link } from 'react-router-dom'
 
 const ProductItem = ({ product , path }) => {
-    const view = useSelector(state => state.product.view)
+    const view = useSelector(state => state.product_item.view)
 
     const { image , price , discountPrice , title } = product
 

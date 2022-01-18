@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { VscAccount } from 'react-icons/vsc'
 import { MdToys } from 'react-icons/md'
 import { CustomLink } from '../elements/CustomLink'
-import { rootActionCreator } from '../../store/action-creators'
+import { changeCurrency, setSearchModal } from '../../store/slices/generalSlice'
 
 const NavigationDefault = () => {
-    const state = useSelector(state => state.bill.currency)
+    const state = useSelector(state => state.general.currency)
     const dispatch = useDispatch()
 
     return (
@@ -67,7 +67,7 @@ const NavigationDefault = () => {
                         </span>
                     </CustomLink>
                     <span 
-                        onClick={() => dispatch(rootActionCreator.currencyChangeAction())}
+                        onClick={() => dispatch(changeCurrency())}
                         className={cls.nav_child_right_money}
                     >
                         {
@@ -82,7 +82,10 @@ const NavigationDefault = () => {
                             </>
                         }
                     </span>
-                    <span className={cls.nav_child_right_search}>
+                    <span 
+                        onClick={() => dispatch(setSearchModal())}
+                        className={cls.nav_child_right_search}
+                    >
                         <BsSearch/> 
                     </span>
                 </ul>

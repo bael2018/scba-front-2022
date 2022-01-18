@@ -3,12 +3,12 @@ import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import cls from '../../scss/page/SingleProductPage.module.scss'
 import { useState , useMemo } from "react"
 import { setActiveImage } from "../../utilities/activeKey"
-import { rootActionCreator } from '../../store/action-creators'
 import { ViewImage } from "../../components/partials/ViewImage"
 import { useDispatch } from "react-redux"
 import { AiOutlineHeart } from "react-icons/ai"
 import { Currency } from '../../components/elements/Currency'
 import { breadCrumbPath } from "../../utilities/bread"
+import { setZoomImage } from "../../store/slices/productItemSlice"
 
 const pics = [
     {
@@ -87,7 +87,7 @@ const SingleProductPage = () => {
                 </div>
                 <div 
                     className={cls.single_image}
-                    onClick={() => dispatch(rootActionCreator.zoomImageAction())}
+                    onClick={() => dispatch(setZoomImage())}
                 >
                     <img src={image} alt="inner" />
                 </div>

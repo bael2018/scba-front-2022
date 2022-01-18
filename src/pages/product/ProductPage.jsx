@@ -43,7 +43,7 @@ const ProductPage = () => {
             title: 'sixth',
             path: `${id}-sixth`,
             image: 'https://www.na-kd.com/globalassets/nakd_soft_rigid_wide_jeans_1660-000863-0047_01c_r.jpg?ref=C533FCE28C',
-            index: 5
+            index: 6
         }
     ]
 

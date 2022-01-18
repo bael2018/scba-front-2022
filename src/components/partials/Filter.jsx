@@ -1,11 +1,11 @@
 import cls from '../../scss/partials/filter.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { rootActionCreator } from '../../store/action-creators'
 import { ProductPrice } from '../elements/ProductPrice'
 import { ProductColour } from '../elements/ProductColour'
+import { setProductViewLarge, setProductViewSmoll } from '../../store/slices/productItemSlice'
 
 const Filter = () => {
-    const view = useSelector(state => state.product.view)
+    const view = useSelector(state => state.product_item.view)
     const dispatch = useDispatch()
 
     return (
@@ -18,13 +18,13 @@ const Filter = () => {
             <div className={cls.filter_view}>
                 <div 
                     className={view ? `${cls.filter_view_first} ${cls.filter_view_active}` : cls.filter_view_first}
-                    onClick={() => dispatch(rootActionCreator.productViewSmollAction())}
+                    onClick={() => dispatch(setProductViewSmoll())}
                 >
                     <span></span><span></span><span></span>
                 </div>
                 <div 
                     className={!view ? `${cls.filter_view_second} ${cls.filter_view_active}` : cls.filter_view_second}
-                    onClick={() => dispatch(rootActionCreator.productViewLargeAction())}
+                    onClick={() => dispatch(setProductViewLarge())}
                 >
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>

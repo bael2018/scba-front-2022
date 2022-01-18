@@ -6,7 +6,7 @@ import { initColourState } from '../../storage'
 import { setActiveColour } from '../../utilities/activeKey'
 
 const ProductColour = () => {
-    const priceType = useSelector(state => state.product.price)
+    const priceType = useSelector(state => state.product_item.price)
     const [array , setArray] = useState(initColourState)
     const [show , setShow] = useState(false)
 

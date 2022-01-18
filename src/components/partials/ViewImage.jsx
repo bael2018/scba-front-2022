@@ -1,10 +1,10 @@
 import cls from '../../scss/partials/viewImage.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState , useMemo } from 'react'
-import { rootActionCreator } from '../../store/action-creators'
+import { setZoomImage } from '../../store/slices/productItemSlice'
 
 const ViewImage = ({ array }) => {
-    const show = useSelector(state => state.product.zoomImage)
+    const show = useSelector(state => state.product_item.zoomImage)
     const [base , setBase] = useState(array)
     const dispatch = useDispatch()
 
@@ -19,7 +19,7 @@ const ViewImage = ({ array }) => {
             <div className={cls.view_wrapper}>
                 <div 
                     className={cls.view_wrapper_close}
-                    onClick={() => dispatch(rootActionCreator.zoomImageAction())}
+                    onClick={() => dispatch(setZoomImage())}
                 >   &times;
                 </div>
                 <img src={pic} alt="inner" />
