@@ -9,16 +9,23 @@ const Currency = ({ discountPrice , price}) => {
 
     return (
         <div className={cls.currency}>
-            <span> 
-                {state ? <BiRuble/> : <BsCurrencyDollar/>}
-                { mathCurrency(state , price) }
-            </span>
             {
-                discountPrice && (
-                <span className={cls.discountPrice}> 
-                    {state ? <BiRuble/> : <BsCurrencyDollar/>}
-                    { mathCurrency(state , discountPrice) }
-                </span>
+                discountPrice ? (
+                <>
+                     <span> 
+                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                        { mathCurrency(state , discountPrice) }
+                    </span>
+                    <span className={cls.discountPrice}> 
+                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                        { mathCurrency(state , price) }
+                    </span>
+                </>
+                ) : (
+                    <span> 
+                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                        { mathCurrency(state , price) }
+                    </span>
                 )
             }
         </div>

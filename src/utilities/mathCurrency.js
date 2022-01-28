@@ -1,3 +1,4 @@
+
 export const mathCurrency = (billState , num) => {
     const currentBill = 73.21
 

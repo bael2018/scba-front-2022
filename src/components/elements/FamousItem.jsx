@@ -1,6 +1,5 @@
 import cls from '../../scss/components/elements/famousItem.module.scss'
-import { useState } from "react"
-import { useEffect } from 'react'
+import { useState , useEffect } from "react"
 
 const FamousItem = ({ title , array }) => {
     const [image , setImage] = useState('')
@@ -27,7 +26,7 @@ const FamousItem = ({ title , array }) => {
                     {
                         array.map(({ title , id }) => {
                             return <li 
-                                style={{background: pid === id ? 'yellow' : ''}}
+                                className={pid === id ? cls.famousItem_body_activeTitle : ''}
                                 onMouseOver={() => findImage(id)} key={id}
                             >
                                 {

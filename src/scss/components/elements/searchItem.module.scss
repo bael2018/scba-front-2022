@@ -1,0 +1,35 @@
+
+.search{
+    width: 32%;
+    margin-bottom: 50px;
+    cursor: pointer;
+
+    &_image{
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1s;
+        }
+    }
+
+    &:hover &_image img{
+        transform: scale(1.1);
+    }
+
+    &_body{
+        font-weight: 300;
+        margin-top: 10px;
+
+        p{
+            color: white;
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}

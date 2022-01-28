@@ -1,5 +1,4 @@
 import cls from '../../scss/components/elements/arrivalItem.module.scss'
-import { AiOutlineEye } from 'react-icons/ai'
 import { Currency } from './Currency'
 
 const ArrivalItem = ({ }) => {

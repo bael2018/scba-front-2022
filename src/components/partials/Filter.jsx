@@ -17,13 +17,17 @@ const Filter = () => {
             </div>
             <div className={cls.filter_view}>
                 <div 
-                    className={view ? `${cls.filter_view_first} ${cls.filter_view_active}` : cls.filter_view_first}
+                    className={
+                        view ? `${cls.filter_view_first} ${cls.filter_view_active}` : cls.filter_view_first
+                    }
                     onClick={() => dispatch(setProductViewSmoll())}
                 >
                     <span></span><span></span><span></span>
                 </div>
                 <div 
-                    className={!view ? `${cls.filter_view_second} ${cls.filter_view_active}` : cls.filter_view_second}
+                    className={
+                        !view ? `${cls.filter_view_second} ${cls.filter_view_active}` : cls.filter_view_second
+                    }
                     onClick={() => dispatch(setProductViewLarge())}
                 >
                     <span></span><span></span><span></span><span></span><span></span><span></span>

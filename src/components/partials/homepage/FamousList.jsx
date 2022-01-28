@@ -32,11 +32,11 @@ const FamousList = () => {
 
     return (
         <section className={cls.famous}>
+            <FamousItem title={'Jacket'} array={initState}/>
             <FamousItem title={'Suits'} array={initState}/>
-            <FamousItem title={'Suits'} array={initState}/>
-            <FamousItem title={'Suits'} array={initState}/>
-            <FamousItem title={'Suits'} array={initState}/>
-            <FamousItem title={'Suits'} array={initState}/>
+            <FamousItem title={'Pants'} array={initState}/>
+            <FamousItem title={'Shoes'} array={initState}/>
+            <FamousItem title={'Caps'} array={initState}/>
             <FamousItem title={'Suits'} array={initState}/>
         </section>
     )

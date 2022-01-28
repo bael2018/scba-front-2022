@@ -1,3 +1,6 @@
+
+@import '../variables.scss';
+
 .view{
     position: fixed;
     height: 100vh;
@@ -18,7 +21,8 @@
     }
     
     &::-webkit-scrollbar-thumb{
-        background: yellow;
+        background: $app-color;
+        border-radius: 20px;
     }
 
     &_active{
@@ -29,7 +33,7 @@
 
     &_wrapper{
         position: relative;
-        margin: 0 auto;
+        margin: 50px auto;
         width: 70%;
         height: 1500px;
 
@@ -37,16 +41,17 @@
             position: absolute;
             cursor: pointer;
             right: -70px;
-            font-size: 60px;
+            font-size: 65px;
             transition: .3s;
 
             &:hover{
-                color: yellow;
+                color: $app-color;
             }
         }
 
         img{
             width: 100%;
+            border-radius: 5px;
             height: 100%;
             object-fit: cover;
         }

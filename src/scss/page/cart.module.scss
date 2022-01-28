@@ -1,0 +1,64 @@
+
+.cart{
+    margin-top: 30px;
+
+    &_title{
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    &_header{
+        margin-top: 30px;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        border-bottom: 1px solid white;
+
+        & div:nth-child(1){
+            width: 60%;
+        }
+
+        & div:nth-child(2){
+            width: 40%;
+        }
+
+        & div:nth-child(2){
+            display: flex;
+            justify-content: space-between;
+
+            span{
+                text-align: right;
+            }
+
+            & span:nth-child(1),
+            & span:nth-child(2){
+                width: 30%;
+            }
+
+            & span:nth-child(3){
+                width: 40%;
+            }
+        }
+    }
+
+    &_body{
+        margin-top: 50px;
+    }
+
+    &_footer{
+        border-top: 1px solid white;
+        text-align: center;
+        padding-top: 40px;
+        font-size: 30px;    
+        font-weight: 500;
+        color: white;
+
+        span{
+            color: yellow;
+            margin-left: 5px;
+        }
+    }
+}

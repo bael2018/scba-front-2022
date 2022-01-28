@@ -1,0 +1,60 @@
+
+@import '../variables.scss';
+
+.form{
+    margin-top: 40px;
+    width: 100%;
+
+    div{
+        position: relative;
+        margin-bottom: 40px;
+        height: 40px;
+
+        input{
+            width: 100%;
+            background: none;
+            color: white;
+            border: none;
+            box-sizing: border-box;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            padding-bottom: 5px;
+            font-size: 18px;
+            outline: none;
+            border-bottom: 1px solid white;
+            transition: .3s;
+
+            &:focus{
+                border-bottom: 1px solid $app-color;
+            }
+
+            &:focus ~ label,
+            &:valid ~ label{
+                transform: translateY(-23px) !important;
+                font-size: 13px;
+                color: $app-color;
+            }
+        } 
+
+        label{
+            position: absolute;
+            left: 0;
+            top: 10px;
+            transition: .3s;
+            pointer-events: none;
+            color: white;
+        }
+    }
+
+    button{
+        background: $app-color;
+        outline: none;
+        color: white;
+        border-radius: 20px;
+        border: none;
+        padding: 7px 25px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+}

@@ -1,6 +1,6 @@
 import cls from '../../scss/nav.module.scss'
 import { MasterLogo } from '../elements/ui/MasterLogo'
-import { AiOutlineMan , AiOutlineWoman , AiFillHeart} from 'react-icons/ai'
+import { AiOutlineMan , AiOutlineWoman , AiFillHeart } from 'react-icons/ai'
 import { BsCurrencyDollar, BsHandbagFill, BsSearch } from 'react-icons/bs'
 import { BiHomeSmile , BiRuble , BiBasket } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
@@ -54,13 +54,13 @@ const NavigationDefault = () => {
                             WISHLIST
                         </span>
                     </CustomLink>
-                    <CustomLink styles='nav' to={'/basket'}>
+                    <CustomLink styles='nav' to={'/cart'}>
                         <span>
                             <BiBasket/>
                             CART
                         </span>
                     </CustomLink>
-                    <CustomLink styles='nav' to={'/account'}>
+                    <CustomLink styles='nav' to={'/user'}>
                         <span>
                             <VscAccount/>
                             ACCOUNT
