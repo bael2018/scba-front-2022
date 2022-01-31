@@ -1,5 +1,6 @@
 
 import { createApi , fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { rootContant } from '../../constants';
 import { rootPath } from '../../utilities/paths';
 
 export const userApi = createApi({
@@ -12,7 +13,7 @@ export const userApi = createApi({
         addUser: builder.mutation({
             query: ({ body , uid }) => ({
                 url: `users/${uid}${rootPath.dotJson}`,
-                method: 'POST',
+                method: rootContant.POST,
                 body
             }),
             invalidatesTags: ['userApiTag']
