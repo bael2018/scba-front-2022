@@ -5,19 +5,19 @@ import { Outlet } from 'react-router-dom'
 import { Search } from '../shared/Search'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { rootPath } from '../../utilities/paths'
 import { Modal } from '../partials/Modal'
+import { rootContant } from '../../constants'
 
 const MasterLayout = () => {
     const modal = useSelector(state => state.general.search)
     const show = useSelector(state => state.product_item.zoomImage)
 
     useEffect(() => {
-        localStorage.setItem(rootPath.beforeAuthPath , JSON.stringify('/'))
+        localStorage.setItem(rootContant.beforeAuthPath , JSON.stringify('/'))
     } , [])
 
     useEffect(() => {
-        if(modal | show){
+        if(modal || show){
             window.document.body.style.overflow = 'hidden'
         }else{
             window.document.body.style.overflowY = 'scroll'

@@ -1,6 +1,10 @@
 import cls from '../../scss/components/elements/famousItem.module.scss'
 import { useState , useEffect } from "react"
 
+const initStyle = {
+    color: '#292929'
+}
+
 const FamousItem = ({ title , array }) => {
     const [image , setImage] = useState('')
     const [pid , setPid] = useState('')
@@ -26,13 +30,12 @@ const FamousItem = ({ title , array }) => {
                     {
                         array.map(({ title , id }) => {
                             return <li 
-                                className={pid === id ? cls.famousItem_body_activeTitle : ''}
-                                onMouseOver={() => findImage(id)} key={id}
+                                className={` ${pid === id && cls.famousItem_body_activeTitle}`}
+                                onMouseOver={() => findImage(id)} 
+                                key={id}
                             >
                                 {
-                                    pid === id ? <span style={{
-                                        color: '#292929'
-                                    }}>{title}</span> : title
+                                    pid === id ? <span style={initStyle}>{title}</span> : title
                                 }
                             </li>
                         })

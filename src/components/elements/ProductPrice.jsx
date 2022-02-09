@@ -21,14 +21,14 @@ const ProductPrice = () => {
         >
             <h4>Price <AiOutlineDown/></h4>
             
-            <div className={show ? cls.price_wrapper_active : ''}>
+            <div className={` ${show && cls.price_wrapper_active}`}>
                 {
                     array.map(({ id , title , active }) => {
                         return <p
                             key={id}
                             onClick={() => setPrice(id)}
                         >
-                        <span className={active ? cls.active_span : ''}></span>
+                        <span className={` ${active && cls.active_span}`}></span>
                         {title}
                     </p>
                     })

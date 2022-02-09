@@ -1,22 +1,20 @@
-
 import { createApi , fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { rootContant } from '../../constants';
-import { rootPath } from '../../utilities/paths';
+import { rootContant, rootTagType } from '../../constants';
 
 export const userApi = createApi({
     reducerPath: 'userApi',
-    tagTypes: ['userApiTag'],
+    tagTypes: [rootTagType.POST_USER_TAG],
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.REACT_APP_FIREBASE_DATABASE_URL
     }),
     endpoints: builder => ({
         addUser: builder.mutation({
             query: ({ body , uid }) => ({
-                url: `users/${uid}${rootPath.dotJson}`,
-                method: rootContant.POST,
+                url: `users/${uid}${rootContant.dotJson}`,
+                method: rootContant.post,
                 body
             }),
-            invalidatesTags: ['userApiTag']
+            invalidatesTags: [rootTagType.POST_USER_TAG]
         })
     })
 })

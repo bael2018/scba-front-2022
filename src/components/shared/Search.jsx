@@ -3,12 +3,12 @@ import cls from '../../scss/search.module.scss'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { setSearchModal } from '../../store/slices/generalSlice'
-import { useState , useEffect } from 'react'
+import { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 import { SearchItem } from '../elements/SearchItem'
 import { setModal } from '../../store/slices/modalSlice'
-import { rootPath } from '../../utilities/paths'
+import { rootContant } from '../../constants'
 
 const initState = [
     {
@@ -54,7 +54,7 @@ const Search = () => {
             setValues('')
         }else{
             dispatch(setModal({
-                state: rootPath.danger,
+                state: rootContant.danger,
                 title: 'Fill in input !',
                 description: 'enter something inside'
             }))

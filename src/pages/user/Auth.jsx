@@ -9,13 +9,13 @@ const Auth = () => {
         <section className={cls.auth}>
             <div className={cls.auth_header}>
                 <span 
-                    className={state ? `${cls.auth_header_btn}` : ''}
+                    className={` ${state && cls.auth_header_btn}`}
                     onClick={() => setState(true)}
                 >
                     LOGIN
                 </span>
                 <span 
-                     className={!state ? `${cls.auth_header_btn}` : ''}
+                     className={` ${!state && cls.auth_header_btn}`}
                     onClick={() => setState(false)}
                 >
                     REGISTER

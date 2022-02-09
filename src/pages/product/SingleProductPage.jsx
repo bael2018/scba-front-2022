@@ -76,7 +76,7 @@ const SingleProductPage = () => {
                     {
                         picsArray.map(({pic , id , active}) => {
                             return <img 
-                                className={active ? cls.single_pics_active : ''}
+                                className={` ${active && cls.single_pics_active}`}
                                 onClick={() => activeImage(id , pic)}
                                 key={id}
                                 src={pic} 

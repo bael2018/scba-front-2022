@@ -1,10 +1,10 @@
 import { BreadCrumb } from '../../components/elements/BreadCrumb';
-import { rootPath } from '../../utilities/paths';
+import { rootContant } from '../../constants';
 import { Account } from './Account';
 import { Auth } from './Auth';
 
 const Logged = () => {
-    const auth = JSON.parse(localStorage.getItem(rootPath.isAuth))
+    const auth = JSON.parse(localStorage.getItem(rootContant.isAuth))
 
     const breadCrumb = [
         {

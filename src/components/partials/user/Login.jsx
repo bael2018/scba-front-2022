@@ -3,8 +3,8 @@ import {setUser} from '../../../store/slices/authSlice'
 import { getAuth , signInWithEmailAndPassword } from 'firebase/auth';
 import { Form } from "../Form";
 import { useNavigate } from "react-router-dom";
-import { rootPath } from "../../../utilities/paths";
 import { setModal } from "../../../store/slices/modalSlice";
+import { rootContant } from "../../../constants";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -21,25 +21,25 @@ const Login = () => {
                     id: user.uid,
                 }))
 
-                localStorage.setItem(rootPath.isAuth , JSON.stringify(user.uid))
-                navigate(JSON.parse(localStorage.getItem(rootPath.beforeAuthPath)))
+                localStorage.setItem(rootContant.isAuth , JSON.stringify(user.uid))
+                navigate(JSON.parse(localStorage.getItem(rootContant.beforeAuthPath)))
 
                 dispatch(setModal({
-                    state: rootPath.success,
+                    state: rootContant.success,
                     title: 'Account logged in !',
                     description: 'welcome back to SCBA shop'
                 }))
             })
             .catch(() => {
                 dispatch(setModal({
-                    state: rootPath.danger,
+                    state: rootContant.danger,
                     title: 'Invalid inputs !',
                     description: 'enter email and password'
                 }))
             })
         }else{
             dispatch(setModal({
-                state: rootPath.danger,
+                state: rootContant.danger,
                 title: 'Empty inputs !',
                 description: 'enter email and password'
             }))

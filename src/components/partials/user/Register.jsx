@@ -3,12 +3,12 @@ import {setUser} from '../../../store/slices/authSlice'
 import { getAuth , createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from "../Form";
 import { useNavigate } from 'react-router-dom';
-import { rootPath } from "../../../utilities/paths";
 import { setModal } from "../../../store/slices/modalSlice";
 import { useAddUserMutation } from "../../../store/rtk-query/usersApi";
+import { rootContant } from "../../../constants";
 
 const Register = () => {
-    const [addUser , {}] = useAddUserMutation()
+    const [addUser] = useAddUserMutation()
     const dispatch = useDispatch();
     const navigate = useNavigate()
     
@@ -27,25 +27,25 @@ const Register = () => {
                     id: uid
                 }))
 
-                localStorage.setItem(rootPath.isAuth , JSON.stringify(user.uid))
-                navigate(JSON.parse(localStorage.getItem(rootPath.beforeAuthPath)))
+                localStorage.setItem(rootContant.isAuth , JSON.stringify(user.uid))
+                navigate(JSON.parse(localStorage.getItem(rootContant.beforeAuthPath)))
 
                 dispatch(setModal({
-                    state: rootPath.success,
+                    state: rootContant.success,
                     title: 'Account created !',
                     description: 'welcome to SCBA shop'
                 }))
             })
             .catch(() => {
                 dispatch(setModal({
-                    state: rootPath.danger,
+                    state: rootContant.danger,
                     title: 'Invalid inputs !',
                     description: 'enter email and password'
                 }))
             })
         }else{
             dispatch(setModal({
-                state: rootPath.danger,
+                state: rootContant.danger,
                 title: 'Empty inputs !',
                 description: 'enter email and password'
             }))
