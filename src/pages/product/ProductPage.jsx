@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router-dom"
 import cls from '../../scss/page/productPage.module.scss'
-import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import { useEffect, useState } from "react"
 import { CategorySkeleton } from "../../components/elements/skeletons/CategorySkeleton"
+import { BreadCrumb } from "../../components/partials/BreadCrumb"
 
 const ProductPage = () => {
     const { id } = useParams()

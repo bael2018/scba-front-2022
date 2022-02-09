@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import cls from '../../scss/page/SingleProductPage.module.scss'
 import { useState , useMemo } from "react"
 import { setActiveImage } from "../../utilities/activeKey"
@@ -9,6 +8,7 @@ import { AiOutlineHeart } from "react-icons/ai"
 import { Currency } from '../../components/elements/Currency'
 import { breadCrumbPath } from "../../utilities/bread"
 import { setZoomImage } from "../../store/slices/productItemSlice"
+import { BreadCrumb } from "../../components/partials/BreadCrumb"
 
 const pics = [
     {

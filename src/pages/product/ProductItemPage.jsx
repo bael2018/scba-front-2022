@@ -1,11 +1,11 @@
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import cls from '../../scss/page/productItemPage.module.scss'
-import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import { ProductItem } from "../../components/elements/ProductItem"
 import { Filter } from "../../components/partials/Filter"
 import { ProductSkeleton } from "../../components/elements/skeletons/ProductSkeleton"
 import { useEffect, useState } from "react"
 import { breadCrumbPath } from "../../utilities/bread"
+import { BreadCrumb } from "../../components/partials/BreadCrumb"
 
 const ProductItemPage = () => {
     const { item } = useParams()

@@ -1,5 +1,5 @@
 import cls from '../../scss/components/elements/breadCrumb.module.scss'
-import { CustomLink } from "./CustomLink"
+import { CustomLink } from "../elements/CustomLink"
 
 const BreadCrumb = ({ paths }) => {
     return (
@@ -7,7 +7,7 @@ const BreadCrumb = ({ paths }) => {
             {
                 paths.map(({ title , path , id , active}) => {
                     return <span 
-                        className={active && cls.breadActive}
+                        className={` ${active && cls.breadActive}`}
                         key={id}
                     >
                         <CustomLink to={path}>

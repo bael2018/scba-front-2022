@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import { CartItem } from "../../components/elements/CartItem";
+import { BreadCrumb } from "../../components/partials/BreadCrumb";
 import cls from '../../scss/page/cart.module.scss';
 import { currencyIcon } from "../../utilities/currencyIcon";
 import { mathCurrency } from "../../utilities/mathCurrency";

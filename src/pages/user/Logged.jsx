@@ -1,4 +1,4 @@
-import { BreadCrumb } from '../../components/elements/BreadCrumb';
+import { BreadCrumb } from '../../components/partials/BreadCrumb';
 import { rootContant } from '../../constants';
 import { Account } from './Account';
 import { Auth } from './Auth';

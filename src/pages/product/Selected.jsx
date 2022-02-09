@@ -1,5 +1,5 @@
-import { BreadCrumb } from "../../components/elements/BreadCrumb"
 import { SelectedItem } from "../../components/elements/SelectedItem"
+import { BreadCrumb } from "../../components/partials/BreadCrumb"
 import cls from '../../scss/page/selected.module.scss'
 
 const Selected = () => {
