@@ -2,8 +2,8 @@ import cls from '../../scss/components/elements/productPrice.module.scss'
 import { AiOutlineDown } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
-import { initPriceState } from '../../storage'
 import { setActiveImage } from '../../utilities/activeKey'
+import { initPriceState } from '../../constants/init'
 
 const ProductPrice = () => {
     const priceType = useSelector(state => state.product_item.price)

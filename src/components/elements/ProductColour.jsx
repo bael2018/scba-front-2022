@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { AiOutlineDown } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
+import { initColourState } from '../../constants/init'
 import cls from '../../scss/components/elements/productColour.module.scss'
-import { initColourState } from '../../storage'
 import { setActiveColour } from '../../utilities/activeKey'
 
 const ProductColour = () => {
