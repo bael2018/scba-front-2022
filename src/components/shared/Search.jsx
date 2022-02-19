@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import cls from '../../scss/search.module.scss'
+import cls from '../../scss/components/search.module.scss'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { setSearchModal } from '../../store/slices/generalSlice'

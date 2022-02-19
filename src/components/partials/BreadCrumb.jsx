@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/breadCrumb.module.scss'
+import cls from '../../scss/components/elements/breadcrumb.module.scss'
 import { CustomLink } from "../elements/CustomLink"
 
 const BreadCrumb = ({ paths }) => {

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import {setUser} from '../../../store/slices/authSlice'
+import {setAuthStatus, setUser} from '../../../store/slices/authSlice'
 import { getAuth , createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from "../Form";
 import { useNavigate } from 'react-router-dom';
@@ -22,13 +22,14 @@ const Register = () => {
                 const uid = user.uid
                 addUser({ body , uid })
                 
+                dispatch(setAuthStatus())
                 dispatch(setUser({
                     email: user.email,
                     id: uid
                 }))
 
-                localStorage.setItem(rootContant.isAuth , JSON.stringify(user.uid))
-                navigate(JSON.parse(localStorage.getItem(rootContant.beforeAuthPath)))
+                localStorage.setItem(rootContant.authToken , JSON.stringify(user.uid))
+                navigate('/')
 
                 dispatch(setModal({
                     state: rootContant.success,

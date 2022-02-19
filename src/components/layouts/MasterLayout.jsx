@@ -4,17 +4,16 @@ import cls from '../../scss/style.module.scss'
 import { Outlet } from 'react-router-dom'
 import { Search } from '../shared/Search'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
 import { Modal } from '../partials/Modal'
+import { useEffect } from 'react'
 import { rootContant } from '../../constants'
+import { useDispatch } from 'react-redux'
+import { setAuthStatus } from '../../store/slices/authSlice'
 
 const MasterLayout = () => {
-    const modal = useSelector(state => state.general.search)
     const show = useSelector(state => state.product_item.zoomImage)
-
-    useEffect(() => {
-        localStorage.setItem(rootContant.beforeAuthPath , JSON.stringify('/'))
-    } , [])
+    const modal = useSelector(state => state.general.search)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         if(modal || show){
@@ -24,6 +23,12 @@ const MasterLayout = () => {
             window.document.body.style.overflowX = 'hidden'
         }
     } , [modal , show]) 
+
+    useEffect(() => {
+        if(JSON.parse(localStorage.getItem(rootContant.authToken))){
+            dispatch(setAuthStatus())
+        }
+    } , [])
 
     return (
         <section className={cls.root}>

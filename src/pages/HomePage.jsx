@@ -1,13 +1,12 @@
-
 import { MasterCarousel } from '../components/partials/carousel/MasterCarousel'
-import { ArrivalsList } from '../components/partials/homepage/ArrivalsList'
+import { ArrivalList } from '../components/partials/homepage/ArrivalList'
 import { FamousList } from '../components/partials/homepage/FamousList'
 
 const HomePage = () => {
     return (
         <>
             <MasterCarousel/>
-            <ArrivalsList/>
+            <ArrivalList/>
             <FamousList/>
         </>
     )

@@ -1,0 +1,108 @@
+@import '../variables.scss';
+
+.nav{
+    border-bottom: 2px solid $app-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_child{
+        display: flex;
+        align-items: center;
+        
+        &_cart{
+            position: absolute;
+            color: $app-bgColor;
+            outline: none;
+            font-size: 11px;
+            top: -13px;
+            width: 15px;
+            height: 15px;   
+            padding-bottom: 3px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            left: 6px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            pointer-events: none;
+            background: $app-color;
+        }        
+        
+        ul{
+            margin: 0px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+
+            a{
+                cursor: pointer;
+                display: block;
+                padding: 30px 10px;
+                text-decoration: none;
+                margin-left: 20px;
+                position: relative;
+                
+                span{
+                    position: relative;
+                    color: white;
+                    font-weight: bold;
+                    display: flex;
+                    transition: .3s;
+                    font-size: 13px;
+
+                    svg{
+                        margin-right: 5px;
+                        color: $app-color;
+                        transition: .3s;
+                    }
+                }
+
+                &:hover span svg,
+                &:hover span{
+                    color: #292929;
+                }
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0%;
+                    top: 0;
+                    transition: .3s;
+                    height: 0%;
+                    width: 100%;
+                    background: $app-color;
+                }
+
+                &:hover::before{
+                    height: 100%;
+                }
+            }
+
+            .nav_child_right_money{
+                color: white;
+                font-weight: bold;
+                margin-left: 25px;
+                display: flex;
+                align-items: center;
+                font-size: 11px;
+                transition: .3s;
+                cursor: pointer;
+            }
+
+            .nav_child_right_search{
+                color: white;
+                font-weight: bold;
+                margin-left: 25px;
+                transition: .3s;
+                cursor: pointer;
+
+                &:hover{
+                    color: $app-color;
+                }
+            }
+        }
+    }
+}

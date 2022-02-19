@@ -3,7 +3,7 @@ import { rootContant, rootTagType } from '../../constants';
 
 export const userApi = createApi({
     reducerPath: 'userApi',
-    tagTypes: [rootTagType.POST_USER_TAG],
+    tagTypes: [rootTagType.USER_TAG],
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.REACT_APP_FIREBASE_DATABASE_URL
     }),
@@ -14,7 +14,7 @@ export const userApi = createApi({
                 method: rootContant.post,
                 body
             }),
-            invalidatesTags: [rootTagType.POST_USER_TAG]
+            invalidatesTags: [rootTagType.USER_TAG]
         })
     })
 })

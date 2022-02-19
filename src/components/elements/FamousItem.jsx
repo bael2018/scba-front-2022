@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/famousItem.module.scss'
+import cls from '../../scss/components/elements/famousitem.module.scss'
 import { useState , useEffect } from "react"
 
 const initStyle = {

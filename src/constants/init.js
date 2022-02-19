@@ -95,3 +95,18 @@ export const initColourState = [
         active: false
     }
 ]
+
+export const cartInit = [
+    {
+        id: 1,
+        title: 'Price'
+    },
+    {
+        id: 2,
+        title: 'Quantity'
+    },
+    {
+        id: 3,
+        title: 'Total'
+    }
+]

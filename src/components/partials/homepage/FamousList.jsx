@@ -1,5 +1,5 @@
 import { FamousItem } from "../../elements/FamousItem"
-import cls from '../../../scss/components/famousList.module.scss'
+import cls from '../../../scss/components/partials/famouslist.module.scss'
 
 const FamousList = () => {
 

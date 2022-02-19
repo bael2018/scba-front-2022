@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const productItemSlice = createSlice({
+const initialState = {
+    maxPrice: '',
+    minPrice: '',
+    price: 'recommended',
+    view: false,
+    zoomImage: false,
+    productId: ''
+}
+
+const productItemSlice = createSlice({
     name: 'productItem',
-    initialState: {
-        maxPrice: '',
-        minPrice: '',
-        price: 'recommended',
-        view: false,
-        zoomImage: false
-    },
+    initialState,
     reducers: {
         setMaxPrice: (state , action) => {
             state.maxPrice = action.payload.max
@@ -27,11 +30,15 @@ export const productItemSlice = createSlice({
         },
         setPrice: (state , action) => {
             state.price = action.payload.price
+        },
+        setProductId: (state , action) => {
+            state.productId = action.payload.productId
         }
     }
 })
 
 export const {
+    setProductId,
     changeCurrency,
     setMaxPrice,
     setMinPrice,

@@ -1,0 +1,65 @@
+.footer{
+    margin: 20px 0;
+
+    h1{
+        margin: 0px;
+        color: white;
+        font-size: 30px;
+        padding-bottom: 7px;
+        border-bottom: 2px solid yellow;
+    }
+
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        &_child{
+            width: 20%;
+
+            h3{
+                margin-top: 0;
+                color: white;
+                font-size: 20px;
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                li{
+                    margin-bottom: 20px;
+
+                    a{
+                        color: rgb(230, 230, 230);
+                        font-weight: 500;
+                        text-decoration: none;
+                        transition: .3s;
+                        position: relative;
+
+                        &::before{
+                            content: '';
+                            left: 50%;
+                            bottom: -4px;
+                            position: absolute;
+                            width: 0%;
+                            height: 1px;
+                            transition: .3s;
+                            background: yellow;
+                        }
+
+                        &:hover{
+                            color: yellow;
+                        }
+
+                        &:hover:before{
+                            left: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

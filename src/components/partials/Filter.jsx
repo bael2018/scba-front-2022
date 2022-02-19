@@ -1,4 +1,4 @@
-import cls from '../../scss/partials/filter.module.scss'
+import cls from '../../scss/components/partials/filter.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { ProductPrice } from './ProductPrice'
 import { ProductColour } from './ProductColour'

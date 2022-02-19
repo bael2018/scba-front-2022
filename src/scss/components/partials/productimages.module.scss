@@ -1,0 +1,15 @@
+.pics{
+    width: 11%;
+
+    &_active{
+        box-shadow: 0px 0px 2px 2px yellow;
+    }
+
+    img{
+        width: 100%;
+        cursor: pointer;
+        height: 160.5px;
+        object-fit: cover;
+        margin-bottom: 5px;
+    }
+}

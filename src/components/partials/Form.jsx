@@ -1,5 +1,5 @@
 import { useState } from "react"
-import cls from '../../scss/partials/form.module.scss';
+import cls from '../../scss/components/partials/form.module.scss';
 
 const Form = ({ btnTitle , handleClick }) => {
     const [email , setEmail] = useState('')

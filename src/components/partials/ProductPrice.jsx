@@ -1,8 +1,8 @@
-import cls from '../../scss/components/elements/productPrice.module.scss'
+import cls from '../../scss/components/elements/productprice.module.scss'
 import { AiOutlineDown } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
-import { setActiveImage } from '../../utilities/activeKey'
+import { setActivePrice } from '../../utilities/activeKey'
 import { initPriceState } from '../../constants/init'
 
 const ProductPrice = () => {
@@ -11,7 +11,7 @@ const ProductPrice = () => {
     const [show , setShow] = useState(false)
 
     const setPrice = e => {
-        setArray(prev => setActiveImage(prev , e))
+        setArray(prev => setActivePrice(prev , e))
     }
 
     return (
@@ -24,13 +24,15 @@ const ProductPrice = () => {
             <div className={` ${show && cls.price_wrapper_active}`}>
                 {
                     array.map(({ id , title , active }) => {
-                        return <p
-                            key={id}
-                            onClick={() => setPrice(id)}
-                        >
-                        <span className={` ${active && cls.active_span}`}></span>
-                        {title}
-                    </p>
+                        return (
+                            <p
+                                key={id}
+                                onClick={() => setPrice(id)}
+                            >
+                            <span className={` ${active && cls.active_span}`}></span>
+                            {title}
+                            </p>
+                        )
                     })
                 }
             </div>

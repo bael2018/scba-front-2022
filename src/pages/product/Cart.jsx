@@ -1,12 +1,15 @@
-import { useSelector } from "react-redux";
-import { CartItem } from "../../components/elements/CartItem";
+import { useGetProductCartQuery } from '../../store/rtk-query/productCartApi'
+import { Skeleton } from '../../components/elements/skeletons/Skeleton';
 import { BreadCrumb } from "../../components/partials/BreadCrumb";
+import { PagesTitle } from '../../components/elements/PagesTitle';
+import { CartList } from '../../components/partials/CartList';
+import { Redirect } from '../../components/partials/Redirect';
 import cls from '../../scss/page/cart.module.scss';
-import { currencyIcon } from "../../utilities/currencyIcon";
-import { mathCurrency } from "../../utilities/mathCurrency";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
-    const state = useSelector(state =>  state.general.currency)
+    const { isAuth } = useSelector(state => state.auth)
+    const { isLoading } = useGetProductCartQuery()
 
     const breadCrumb = [
         {
@@ -26,30 +29,12 @@ const Cart = () => {
         <section>
             <BreadCrumb paths={breadCrumb}/>
             <div className={cls.cart}>
-                <h2 className={cls.cart_title}>Shopping cart</h2>
-                <div className={cls.cart_header}>
-                    <div>
-                        Product
-                    </div>
-                    <div>
-                        <span>
-                            Price
-                        </span>
-                        <span>
-                            Quantity
-                        </span>
-                        <span>  
-                            Total
-                        </span>
-                    </div>
-                </div>
-                <div className={cls.cart_body}>
-                    <CartItem/>
-                    <CartItem/>
-                </div>
-                <div className={cls.cart_footer}>
-                    Subtotal: <span>{mathCurrency(state , 400)} {currencyIcon(state)}</span>
-                </div>
+                <PagesTitle text={'Shopping cart'}/>
+                {
+                    isAuth ? (
+                        isLoading ? <Skeleton styles={'cart'}/> : <CartList/>
+                    ) : <Redirect text={'cart'}/>
+                }
             </div>
         </section>
     )

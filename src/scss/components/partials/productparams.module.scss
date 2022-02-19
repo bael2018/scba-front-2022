@@ -1,0 +1,49 @@
+.color{
+    margin-top: 20px;
+    color: white;
+
+    span{
+        font-weight: 600;
+        margin-right: 5px;
+    }
+
+    &_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+        div{
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border: 2px solid yellow;
+        }
+    }
+}
+
+.size{
+    margin-top: 20px;
+    color: white;
+
+    span{
+        font-weight: 600;
+        margin-right: 5px;
+    }
+
+    &_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+        div{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border: 2px solid white;
+            margin-right: 10px;
+        }
+    }
+}

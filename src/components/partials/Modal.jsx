@@ -1,10 +1,8 @@
-
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { rootContant } from '../../constants';
-import cls from '../../scss/partials/modal.module.scss';
+import cls from '../../scss/components/partials/modal.module.scss';
 import { clearModal } from '../../store/slices/modalSlice';
+import { useDispatch , useSelector } from 'react-redux';
+import { rootContant } from '../../constants';
+import { useEffect } from 'react';
 
 const Modal = () => {
     const { display , state , description , title } = useSelector(state => state.modal)

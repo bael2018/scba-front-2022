@@ -1,8 +1,7 @@
-import { BiRuble } from "react-icons/bi"
-import { BsCurrencyDollar } from "react-icons/bs"
 import { useSelector } from "react-redux"
 import { mathCurrency } from "../../utilities/mathCurrency"
 import cls from '../../scss/components/elements/currency.module.scss'
+import { currencyIcon } from "../../utilities/currencyIcon"
 
 const Currency = ({ discountPrice , price}) => {
     const state = useSelector(state =>  state.general.currency)
@@ -12,18 +11,18 @@ const Currency = ({ discountPrice , price}) => {
             {
                 discountPrice ? (
                 <>
-                     <span> 
-                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                    <span> 
+                        { currencyIcon(state) }
                         { mathCurrency(state , discountPrice) }
                     </span>
                     <span className={cls.discountPrice}> 
-                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                        { currencyIcon(state) }
                         { mathCurrency(state , price) }
                     </span>
                 </>
                 ) : (
                     <span> 
-                        {state ? <BiRuble/> : <BsCurrencyDollar/>}
+                        { currencyIcon(state) }
                         { mathCurrency(state , price) }
                     </span>
                 )

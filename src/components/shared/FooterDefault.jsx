@@ -1,5 +1,5 @@
 import { initContactState, initLinkState } from '../../constants/init'
-import cls from '../../scss/footer.module.scss'
+import cls from '../../scss/components/footer.module.scss'
 import { CustomLink } from '../elements/CustomLink'
 
 const FooterDetault = () => {

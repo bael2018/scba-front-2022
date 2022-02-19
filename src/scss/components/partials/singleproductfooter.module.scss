@@ -1,0 +1,36 @@
+.product_lower{
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 50px;
+
+    button{
+        width: 80%;
+        outline: none;
+        height: 100%;
+        background: none;
+        color: yellow;
+        border: 1px solid yellow;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    span{
+        cursor: pointer;
+        color: white;
+        font-size: 35px;
+    }
+
+    &_wish{
+        color: yellow !important;
+        pointer-events: none;
+    }
+
+    &_cart{
+        background: yellow !important;
+        pointer-events: none;
+        color: white !important;
+    }
+}

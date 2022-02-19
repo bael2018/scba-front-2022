@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const generalSlice = createSlice({
+const initialState = {
+    currency: false,
+    search: false
+}
+
+const generalSlice = createSlice({
     name: 'currency',
-    initialState: {
-        currency: false,
-        search: false
-    },
+    initialState,
     reducers: {
         changeCurrency: state => {
             state.currency = !state.currency

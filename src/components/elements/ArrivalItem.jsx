@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/arrivalItem.module.scss'
+import cls from '../../scss/components/elements/arrivalitem.module.scss'
 import { Currency } from './Currency'
 
 const ArrivalItem = ({ }) => {

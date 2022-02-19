@@ -27,7 +27,6 @@
         height: 300px;
         position: relative;
         overflow: hidden;
-        border-radius: 5px;
 
         img{
             width: 100%;
@@ -92,9 +91,19 @@
             border: none;
             border: 1px solid white;
         }
+
+        &_span{
+            color: yellow;
+            display: flex;
+            position: relative;
+            align-items: center;
+            font-size: 27px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
     }
 
-    &:hover &_body a{
+    &:hover &_body a{   
         background: yellow;
         font-weight: bold;
         border: 1px solid yellow;

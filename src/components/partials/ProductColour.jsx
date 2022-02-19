@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AiOutlineDown } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { initColourState } from '../../constants/init'
-import cls from '../../scss/components/elements/productColour.module.scss'
+import cls from '../../scss/components/elements/productcolour.module.scss'
 import { setActiveColour } from '../../utilities/activeKey'
 
 const ProductColour = () => {
@@ -24,13 +24,15 @@ const ProductColour = () => {
             <div className={` ${show && cls.price_wrapper_active}`}>
                 {
                     array.map(({ id , title , active }) => {
-                        return <p
-                            key={id}
-                            onClick={() => setColour(id)}
-                        >
-                        <span className={` ${active && cls.active_span}`}></span>
-                        {title}
-                    </p>
+                        return (
+                            <p
+                                key={id}
+                                onClick={() => setColour(id)}
+                            >
+                            <span className={` ${active && cls.active_span}`}></span>
+                            {title}
+                            </p>
+                        )
                     })
                 }
             </div>

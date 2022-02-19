@@ -1,10 +1,10 @@
 import { BreadCrumb } from '../../components/partials/BreadCrumb';
+import { Account } from '../../components/shared/Account';
+import { Auth } from '../../components/shared/Auth';
 import { rootContant } from '../../constants';
-import { Account } from './Account';
-import { Auth } from './Auth';
 
 const Logged = () => {
-    const auth = JSON.parse(localStorage.getItem(rootContant.isAuth))
+    const auth = JSON.parse(localStorage.getItem(rootContant.authToken))
 
     const breadCrumb = [
         {

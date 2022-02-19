@@ -1,0 +1,103 @@
+.single{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    &_image{
+        width: 50%;
+        height: 500px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            cursor: zoom-in ;
+            object-fit: cover;
+        }
+    }
+
+    &_body{
+        box-sizing: border-box;
+        padding-left: 15px;
+        width: 37%;
+
+        h3{
+            color: white;
+            font-size: 26px;
+            font-weight: 400;
+            margin: 0px;
+        }
+
+        p{
+            color: grey;
+            font-size: 15px;
+        }
+
+        &_price{
+            display: flex;
+            align-items: center;
+            
+            span{
+                color: yellow;
+                font-weight: bold;
+                display: flex;
+                font-size: 35px;
+                align-items: center;
+            }
+
+            .discountPrice{
+                margin-left: 10px;
+                color: grey;
+                font-size: 21px;
+                position: relative;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 15px;
+                    width: 100%;
+                    height: 1px;
+                    background: grey;
+                }
+            }
+        }
+
+        &_lower{
+            margin-top: 30px;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+            height: 50px;
+
+            button{
+                width: 80%;
+                outline: none;
+                height: 100%;
+                background: none;
+                color: yellow;
+                border: 1px solid yellow;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            span{
+                cursor: pointer;
+                color: white;
+                font-size: 35px;
+            }
+
+            &_wish{
+                color: yellow !important;
+                pointer-events: none;
+            }
+
+            &_cart{
+                background: yellow !important;
+                pointer-events: none;
+                color: white !important;
+            }
+        }
+    }
+}

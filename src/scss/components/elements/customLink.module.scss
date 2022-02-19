@@ -1,3 +1,4 @@
+@import '../../variables.scss';
 
 .nav_child_active{
     &::before{
@@ -5,11 +6,16 @@
     }
     
     span{
-        color: #292929 !important;
+        color:#292929 !important;
 
         svg{
-            color: #292929 !important;
+            color:#292929 !important;
         }
+    }
+
+    button{
+        color:$app-color;
+        background: #292929;
     }
 }
 
@@ -20,6 +26,6 @@
     }
 
     &{
-        color: yellow !important;
+        color: $app-color !important;
     }
 }

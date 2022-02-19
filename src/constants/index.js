@@ -4,8 +4,7 @@ export const rootContant = {
     put: 'PUT',
     delete: 'DELETE',
     patch: 'PATCH',
-    isAuth: 'isAuth',
-    beforeAuthPath: 'beforeAuthPath',
+    authToken: 'authToken',
     success: 'success',
     danger: 'danger',
     warning: 'warning',
@@ -13,5 +12,9 @@ export const rootContant = {
 }
 
 export const rootTagType = {
-    POST_USER_TAG: 'POST_USER_TAG'
+    USER_TAG: 'USER_TAG',
+    CATEGORY_TAG: 'CATEGORY_TAG',
+    PRODUCTS_TAG: 'PRODUCTS_TAG',
+    PRODUCT_CART_TAG: 'PRODUCT_CART_TAG',
+    PRODUCT_WISHLIST_TAG: 'PRODUCT_WISHLIST_TAG'
 }

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper'
-import cls from '../../../scss/components/masterCarousel.module.scss'
+import cls from '../../../scss/components/partials/mastercarousel.module.scss'
 import 'swiper/css/navigation';
 import 'swiper/css';    
 

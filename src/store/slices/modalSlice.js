@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initModalState = {
+const initialState = {
     state: null,
     description: null,
     title: null,
@@ -9,7 +9,7 @@ const initModalState = {
 
 const modalSlice = createSlice({
     name: 'modal',
-    initialState: initModalState,
+    initialState,
     reducers: {
         setModal: (state , action) => {
             state.state = action.payload.state;

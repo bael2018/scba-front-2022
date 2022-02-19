@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/searchItem.module.scss';
+import cls from '../../scss/components/elements/searchitem.module.scss';
 import { Currency } from './Currency';
 
 const SearchItem = ({ title , price , discountPrice , image }) => {

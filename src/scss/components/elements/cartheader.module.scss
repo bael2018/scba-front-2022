@@ -1,0 +1,33 @@
+.cart_header{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+
+    & div:nth-child(1){
+        width: 60%;
+    }
+
+    & div:nth-child(2){
+        width: 40%;
+    }
+
+    & div:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+
+        span{
+            text-align: right;
+        }
+
+        & span:nth-child(1),
+        & span:nth-child(2){
+            width: 30%;
+        }
+
+        & span:nth-child(3){
+            width: 40%;
+        }
+    }
+}

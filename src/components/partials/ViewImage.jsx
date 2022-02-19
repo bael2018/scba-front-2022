@@ -1,19 +1,11 @@
-import cls from '../../scss/partials/viewImage.module.scss'
+import cls from '../../scss/components/partials/viewimage.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { useState , useMemo } from 'react'
 import { setZoomImage } from '../../store/slices/productItemSlice'
 
-const ViewImage = ({ array }) => {
+const ViewImage = ({ image }) => {
     const show = useSelector(state => state.product_item.zoomImage)
-    const [base , setBase] = useState(array)
     const dispatch = useDispatch()
-
-    const { pic } = base.find(({ active }) => active === true)
-
-    useMemo(() => {
-        setBase(array)
-    } , [array])
-
+    
     return (
         <section className={show ? `${cls.view} ${cls.view_active}` : cls.view}>
             <div className={cls.view_wrapper}>
@@ -22,7 +14,7 @@ const ViewImage = ({ array }) => {
                     onClick={() => dispatch(setZoomImage())}
                 >   &times;
                 </div>
-                <img src={pic} alt="inner" />
+                <img src={image} alt="inner" />
             </div>
         </section>  
     )

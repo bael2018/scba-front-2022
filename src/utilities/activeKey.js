@@ -1,5 +1,4 @@
-
-export const setActiveImage = (array , id) => {
+export const setActivePrice = (array , id) => {
     const filteredArray = array.map(item => {
         return {
             ...item,

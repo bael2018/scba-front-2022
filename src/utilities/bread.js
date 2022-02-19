@@ -1,4 +1,3 @@
-
 export function breadCrumbPath (item) {
     const arr = item.split('').map(item => {
         if(item === '-'){
