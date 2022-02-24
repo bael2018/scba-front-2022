@@ -5,17 +5,24 @@ const BreadCrumb = ({ paths }) => {
     return (
         <section className={cls.bread}>
             {
-                paths.map(({ title , path , id , active}) => {
-                    return <span 
-                        className={` ${active && cls.breadActive}`}
-                        key={id}
-                    >
-                        <CustomLink to={path}>
-                            {title}
-                            <span>{!active && '/'}</span>
-                        </CustomLink>
-                    </span>
-                })
+                paths.length ? (
+                    paths.map(({ title , path , id , active}) => {
+                        return <span 
+                            className={` ${active && cls.breadActive}`}
+                            key={id}
+                        >
+                            <CustomLink to={path}>
+                                {title}
+                                <span>{!active && '/'}</span>
+                            </CustomLink>
+                        </span>
+                    })
+                ) : (
+                    <CustomLink to={'/'}>
+                        Home
+                        <span>/</span>
+                    </CustomLink>
+                )
             }
         </section>
     )

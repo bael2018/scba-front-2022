@@ -3,7 +3,7 @@ import { mathCurrency } from "../../utilities/mathCurrency"
 import cls from '../../scss/components/elements/currency.module.scss'
 import { currencyIcon } from "../../utilities/currencyIcon"
 
-const Currency = ({ discountPrice , price}) => {
+const Currency = ({ discountPrice , price }) => {
     const state = useSelector(state =>  state.general.currency)
 
     return (

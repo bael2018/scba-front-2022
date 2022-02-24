@@ -6,7 +6,7 @@ const ProductParams = ({ color , size }) => {
             {
                 color && (
                     <div className={cls.color}>
-                        <span>COLOUR :</span> {color}
+                        <span>COLOR :</span> {color}
                         <div className={cls.color_wrapper}>
                             <div style={{ background: color }}></div>
                         </div>

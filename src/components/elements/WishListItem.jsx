@@ -6,7 +6,7 @@ import { toArrayWithId } from '../../utilities/toArray'
 import { Currency } from './Currency'
 
 const WishlistItem = ({ title , mainImage , price , discountPrice , cartId , id }) => {
-    const authToken = JSON.parse(localStorage.getItem(rootContant.authToken))
+    const userToken = JSON.parse(localStorage.getItem(rootContant.userToken))
     const [deleteProduct] = useDeleteProductWishlistMutation()
     const [ postCart ] = usePostProductCartMutation()
     const { data } = useGetProductCartQuery()
@@ -15,12 +15,12 @@ const WishlistItem = ({ title , mainImage , price , discountPrice , cartId , id 
         if(path === 'cart'){
             await postCart({
                 body: { productId: id },
-                id: authToken,
+                id: userToken,
                 endpoint: path
             }).unwrap()
         }else{
             await deleteProduct({ 
-                id: authToken, 
+                id: userToken, 
                 endpoint: path,
                 cartId
             }).unwrap()

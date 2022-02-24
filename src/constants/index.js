@@ -4,7 +4,7 @@ export const rootContant = {
     put: 'PUT',
     delete: 'DELETE',
     patch: 'PATCH',
-    authToken: 'authToken',
+    userToken: 'userToken',
     success: 'success',
     danger: 'danger',
     warning: 'warning',

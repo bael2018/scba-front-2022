@@ -9,23 +9,24 @@ import { useEffect } from 'react'
 import { rootContant } from '../../constants'
 import { useDispatch } from 'react-redux'
 import { setAuthStatus } from '../../store/slices/authSlice'
+import { CartModal } from '../partials/CartModal'
 
 const MasterLayout = () => {
     const show = useSelector(state => state.product_item.zoomImage)
-    const modal = useSelector(state => state.general.search)
+    const { search , isCartModal} = useSelector(state => state.general)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if(modal || show){
+        if(search || show || isCartModal){
             window.document.body.style.overflow = 'hidden'
         }else{
             window.document.body.style.overflowY = 'scroll'
             window.document.body.style.overflowX = 'hidden'
         }
-    } , [modal , show]) 
+    } , [search , show , isCartModal]) 
 
     useEffect(() => {
-        if(JSON.parse(localStorage.getItem(rootContant.authToken))){
+        if(JSON.parse(localStorage.getItem(rootContant.userToken))){
             dispatch(setAuthStatus())
         }
     } , [])
@@ -37,6 +38,7 @@ const MasterLayout = () => {
             <FooterDetault/>
             <Search/>
             <Modal/>
+            <CartModal/>
         </section>
     )
 }

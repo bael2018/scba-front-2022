@@ -1,8 +1,14 @@
+@import '../../variables.scss';
 
 .item{
     width: 19%;
     margin: 0 .5%;
     margin-bottom: 30px;
+
+    &_btn{
+        background: $app-color !important;
+        pointer-events: none;
+    }
 
     &_alt{
         width: 32% !important;
@@ -36,7 +42,7 @@
 
         span{
             position: absolute;
-            background: yellow;
+            background: #292929;
             right: -30px;
             color: white;
             display: flex;
@@ -93,7 +99,7 @@
         }
 
         &_span{
-            color: yellow;
+            color: $app-color;
             display: flex;
             position: relative;
             align-items: center;
@@ -104,9 +110,9 @@
     }
 
     &:hover &_body a{   
-        background: yellow;
+        background: $app-color;
         font-weight: bold;
-        border: 1px solid yellow;
+        border: 1px solid $app-color;
         color: #292929;
     }
 }

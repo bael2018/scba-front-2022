@@ -10,6 +10,18 @@
         text-align: center;
     }
 
+    div{
+
+        h3{
+            color: white;
+
+            span{
+                color: yellow;
+                margin-left: 10px;
+            }
+        }
+    }
+
     &_btn{
         background:  $app-color;
         outline: none;

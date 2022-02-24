@@ -1,8 +1,8 @@
 import cls from '../../scss/components/partials/singleproductlist.module.scss'
 import { useGetProductsQuery } from '../../store/rtk-query/productsApi'
 import { setZoomImage } from "../../store/slices/productItemSlice"
-import { SingleProductFooter } from "../../pages/product/SingleProductFooter"
-import { fillterByid } from "../../utilities/fillterById"
+import { SingleProductFooter } from './SingleProductFooter'
+import { fillterByid } from "../../utilities/fillters"
 import { toArrayWithId } from "../../utilities/toArray"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -13,14 +13,15 @@ import { ProductParams } from "./ProductParams"
 import { ViewImage } from "./ViewImage"
 
 const SingleProductList = () => {
+    const modal = useSelector(state => state.general.search)
     const { productId } = useSelector(state => state.product_item)
-    const { data } = useGetProductsQuery()
     const [image , setImage] = useState('')
+    const { data } = useGetProductsQuery()
     const dispatch = useDispatch()
 
     useEffect(() => {
         setImage(fillterByid(data , productId)[0]?.mainImage)
-    } , [])
+    } , [modal])
 
     const activeImage = pic => {
         setImage(pic)

@@ -1,0 +1,101 @@
+@import '../../variables.scss';
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    transition: .3s;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+
+    &_active{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &_wrapper{
+        width: 30%;
+        background: #292929;
+        box-sizing: border-box;
+        padding: 30px;
+        position: relative;
+        border-radius: 5px;
+
+        &_closer{
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            height: 45px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10%;
+            font-size: 35px;
+            background: $app-color;
+            cursor: pointer;
+    
+            svg{
+                color: white;
+            }
+        }
+
+        &_body{
+            span{
+                color: $app-color;
+                font-weight: 600;
+                align-items: center;
+                display: flex;
+                font-size: 23px;
+            }
+
+            h4{
+                padding-bottom: 15px;
+                color: white;
+                font-size: 25px;
+                margin: 0;
+                justify-content: center;
+                display: flex;
+                border-bottom: 1px solid #424242;
+
+                span{
+                    margin-left: 10px;
+                }
+            }
+
+            div{
+                display: flex;
+                margin: 25px 0;
+                justify-content: space-between;
+                align-content: center;
+                color: white;
+                font-size: 21px;
+
+                h3{
+                    margin: 0;
+                    font-weight: 500;
+                }
+            }
+
+            p{
+                margin-bottom: 0;
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-size: 27px;
+                font-weight: 600;
+
+                span{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

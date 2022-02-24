@@ -10,6 +10,10 @@
             font-size: 45px;
             display: inline;
             margin: 0 auto;
+
+            span{
+                color: yellow;
+            }
         }
 
         p{
@@ -33,7 +37,6 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
         margin-top: 50px;
     }
 }

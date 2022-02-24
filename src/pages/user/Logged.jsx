@@ -4,7 +4,7 @@ import { Auth } from '../../components/shared/Auth';
 import { rootContant } from '../../constants';
 
 const Logged = () => {
-    const auth = JSON.parse(localStorage.getItem(rootContant.authToken))
+    const auth = JSON.parse(localStorage.getItem(rootContant.userToken))
 
     const breadCrumb = [
         {

@@ -2,32 +2,57 @@ import { useDeleteProductCartMutation } from '../../store/rtk-query/productCartA
 import cls from '../../scss/components/elements/cartitem.module.scss';
 import { currencyIcon } from '../../utilities/currencyIcon';
 import { mathCurrency } from '../../utilities/mathCurrency';
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState , useEffect } from 'react';
 import { rootContant } from '../../constants';
+import { 
+    decrementTotalPrice,
+    decrementTotalQuantity, 
+    incrementTotalPrice, 
+    incrementTotalQuantity, 
+    removeCartActive, 
+    setCartActive, 
+    setTotalDiscountPrice, 
+    setTotalPrice, 
+    setTotalQuantity 
+} from '../../store/slices/generalSlice';
 
 const CartItem = ({ title , mainImage , price , discountPrice , cartId }) => {
-    const state = useSelector(state => state.general.currency)
+    const { currency, isCart } = useSelector(state => state.general)
     const [deleteProduct] = useDeleteProductCartMutation()
     const [quant , setQuant] = useState(1)
+    const dispatch = useDispatch()
 
     const incrementQuant = () => {
         if(quant > 1){
             setQuant(prev => prev - 1)
+            dispatch(decrementTotalQuantity())
+            dispatch(decrementTotalPrice(+price))
         }
     }
     
     const decrementQuant = () => {
         setQuant(prev => prev + 1)
+        dispatch(incrementTotalQuantity())
+        dispatch(incrementTotalPrice(+price))
     }
 
     const deleteBtnHandler = async () => {
         await deleteProduct({ 
-            id: JSON.parse(localStorage.getItem(rootContant.authToken)), 
+            id: JSON.parse(localStorage.getItem(rootContant.userToken)), 
             endpoint: 'cart',
             cartId
         }).unwrap()
     }
+
+    useEffect(() => {
+        if(!isCart){
+            dispatch(setTotalPrice(+price))
+            dispatch(setTotalQuantity(quant))
+            if(discountPrice) dispatch(setTotalDiscountPrice(+price - +discountPrice))
+        }
+        dispatch(setCartActive())
+    } , [])
 
     return (
         <div className={cls.cart}>
@@ -38,19 +63,7 @@ const CartItem = ({ title , mainImage , price , discountPrice , cartId }) => {
             <div className={cls.cart_wrapper}>
                 <span onClick={deleteBtnHandler} className={cls.cart_wrapper_remove}>remove</span>
                 <div className={cls.cart_wrapper_price}>
-                    {
-                        discountPrice ? (
-                            <>
-                                {mathCurrency(state , discountPrice)}
-                                {currencyIcon(state)}
-                            </>
-                        ) : (
-                            <>
-                                {mathCurrency(state , price)}
-                                {currencyIcon(state)}
-                            </>
-                        )
-                    }
+                    {mathCurrency(currency , price)} {currencyIcon(currency)}
                 </div>
                 <div className={cls.cart_wrapper_quantity}>
                     <div>
@@ -66,19 +79,7 @@ const CartItem = ({ title , mainImage , price , discountPrice , cartId }) => {
                     </div>
                 </div>
                 <div className={cls.cart_wrapper_total}>
-                    {
-                        discountPrice ? (
-                            <>
-                                {mathCurrency(state , discountPrice * quant)}
-                                {currencyIcon(state)}
-                            </>
-                        ) : (
-                            <>
-                                {mathCurrency(state , price * quant)}
-                                {currencyIcon(state)}
-                            </>
-                        )
-                    }
+                    {mathCurrency(currency , price * quant)} {currencyIcon(currency)}
                 </div>
             </div>
         </div>

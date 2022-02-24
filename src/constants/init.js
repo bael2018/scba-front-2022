@@ -47,9 +47,9 @@ export const initContactState = [
         id: 4
     },
     {
-        title: 'ACCESSORIES',
+        title: 'CART',
         styles: 'foot',
-        path: '/product/accessories',
+        path: '/cart',
         id: 5
     },
     {
@@ -64,35 +64,29 @@ export const initPriceState = [
     {
         title: 'Recommended',
         id: 1,
-        active: true
     },
     {
         title: 'Low to High',
         id: 2,
-        active: false
     },
     {
         title: 'High to Low',
         id: 3,
-        active: false
     }
 ]
 
-export const initColourState = [
+export const initStatusState = [
     {
-        title: 'black',
+        title: 'Recommended',
         id: 1,
-        active: false
     },
     {
-        title: 'red',
+        title: 'New',
         id: 2,
-        active: false
     },
     {
-        title: 'green',
+        title: 'Famous',
         id: 3,
-        active: false
     }
 ]
 

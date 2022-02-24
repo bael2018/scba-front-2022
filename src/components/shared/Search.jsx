@@ -1,3 +1,4 @@
+import { useGetProductsQuery } from '../../store/rtk-query/productsApi'
 import { useSelector } from 'react-redux'
 import cls from '../../scss/components/search.module.scss'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -9,48 +10,23 @@ import { FaTimes } from 'react-icons/fa';
 import { SearchItem } from '../elements/SearchItem'
 import { setModal } from '../../store/slices/modalSlice'
 import { rootContant } from '../../constants'
-
-const initState = [
-    {
-        id: new Date().toISOString(),
-        title: "Men's Wool Jackets & Coats | Pendleton",
-        discountPrice: 400,
-        price: 450,
-        image: 'https://media.pendleton-usa.com/image/list/$i_!sfcc-is-main:True!/fn_edge:join/f_auto,q_auto,dpr_3.0/w_400,c_scale/51081-16049?_s=RAABAB0'
-    },
-    {
-        id: new Date().toISOString(),
-        title: "The Fall Jacket for woman 2021",
-        discountPrice: 490,
-        price: 670,
-        image: 'https://media1.popsugar-assets.com/files/thumbor/pSvbUzMweeQdf29IoB7YUEzep7Y/0x0:1920x1920/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2021/09/21/791/n/1922564/a484c27f614a1d838562f4.74697070_/i/best-fall-jackets-for-women.webp'
-    },
-    {
-        id: new Date().toISOString(),
-        title: "Jacket with Brown Colors",
-        discountPrice: 80,
-        price: 111,
-        image: 'https://st.mngbcn.com/rcs/pics/static/T8/fotos/S20/87020506_CG.jpg?ts=1633611428250&imwidth=388&imdensity=2'
-    },
-    {
-        id: new Date().toISOString(),
-        title: "Jacket Woman Lucky Brand",
-        discountPrice: 200,
-        price: 233,
-        image: 'https://i1.adis.ws/i/lucky/7W31485_610_2/HOODED-PUFFER-JACKET-610?$medium-2$'
-    },
-]
+import { toArrayWithId } from '../../utilities/toArray'
+import { BiErrorCircle } from 'react-icons/bi'
 
 const Search = () => {
     const modal = useSelector(state => state.general.search)
+    const { data } = useGetProductsQuery()
     const [values , setValues] = useState('')
-    const [data , setData] = useState([])
+    const [base , setBase] = useState([])
+    const [text , setText] = useState(false)
     const dispatch = useDispatch()
 
     const handleSearch = () => {
+        setText(true)
         if(values.trim().length){
-            const filteredArray = initState.filter(item => item.title.toLowerCase().includes(values.toLowerCase()))
-            setData(filteredArray)
+            const filteredArray = toArrayWithId(data)
+            .filter(item => item.title.toLowerCase().includes(values.toLowerCase()))
+            setBase(filteredArray)
             setValues('')
         }else{
             dispatch(setModal({
@@ -83,7 +59,19 @@ const Search = () => {
 
                 <div className={cls.search_wrapper_body}>
                     {
-                        data.map(item => <SearchItem key={item.id} {...item}/>)
+                        !text && 
+                        <div className={cls.search_wrapper_body_search}> 
+                            <BsSearch/> Find your clothes !
+                        </div>
+                    }
+                    {
+                        
+                        base.length ? base.map(item => <SearchItem key={item.id} {...item}/>) : 
+                        text ? 
+                        <div className={cls.search_wrapper_body_search}> 
+                        <BiErrorCircle/> No products found ! 
+                        </div> : 
+                        null
                     }
                 </div>
             </div>

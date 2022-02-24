@@ -10,3 +10,15 @@
 button{
     font-family: $app-fontFamily;
 }
+
+*{
+    &::-webkit-scrollbar{
+        background: none;
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: yellow;
+        border-radius: 10px;
+    }
+}

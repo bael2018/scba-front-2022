@@ -5,14 +5,15 @@ import { breadCrumbPath } from "../../utilities/bread"
 import { BreadCrumb } from "../../components/partials/BreadCrumb"
 import { Skeleton } from "../../components/elements/skeletons/Skeleton"
 import { useGetProductsQuery } from "../../store/rtk-query/productsApi"
-import { toLower } from "../../utilities/toLowerCase"
+import { toLower } from "../../utilities"
 import { ProductItemList } from "../../components/partials/ProductItemList"
 import { toArrayWithId } from "../../utilities/toArray"
+import { filterProductItems } from "../../utilities/fillters"
 
 const ProductItemPage = () => {
-    const { item } = useParams()
-    const {first , second} = breadCrumbPath(item)
     const { data , isLoading } = useGetProductsQuery()
+    const { item } = useParams()
+    const { first , second } = breadCrumbPath(item)
 
     const breadCrumb = [
         {
@@ -36,7 +37,7 @@ const ProductItemPage = () => {
     return (
         <>
             <BreadCrumb paths={breadCrumb}/>
-            { toArrayWithId(data).length && <Filter/> }
+            { filterProductItems(toArrayWithId(data) , first , second).length ? <Filter/> : null }
             <div className={cls.product_wrapper}>
                 {
                     isLoading ? <Skeleton styles={'product'}/> : <ProductItemList first={first} second={second}/>

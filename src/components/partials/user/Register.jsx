@@ -28,7 +28,7 @@ const Register = () => {
                     id: uid
                 }))
 
-                localStorage.setItem(rootContant.authToken , JSON.stringify(user.uid))
+                localStorage.setItem(rootContant.userToken , JSON.stringify(user.uid))
                 navigate('/')
 
                 dispatch(setModal({

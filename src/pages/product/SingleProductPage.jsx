@@ -1,39 +1,35 @@
 import { SingleProductList } from '../../components/partials/SingleProductList'
 import { BreadCrumb } from "../../components/partials/BreadCrumb"
-import { breadCrumbPath } from "../../utilities/bread"
-import { useParams } from "react-router-dom"
+import { useEffect } from 'react'
+import { useGetProductsQuery } from '../../store/rtk-query/productsApi'
+import { fillterByid } from '../../utilities/fillters'
+import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 const SingleProductPage = () => {
-    const { product } = useParams()
-    const { first , second , third } = breadCrumbPath(product)
+    const modal = useSelector(state => state.general.search)
+    const { productId } = useSelector(state => state.product_item)
+    const [ breads , setBreads ] = useState([])
+    const { data } = useGetProductsQuery()
 
-    const breadCrumb = [
-        {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
-        {
-            title: first,
-            path: `/product/${first}`,
-            id: 2
-        },
-        {
-            title: second,
-            path: `/product/${first}/${first}-${second}`,
-            id: 3
-        },
-        {
-            title: third,
-            active: true,
-            path: `/product/${first}/${first}-${second}/${first}-${second}-${third}`,
-            id: 4
+    useEffect(() => {
+        if(fillterByid(data , productId).length){
+            setBreads([
+                {
+                    title: 'Home',
+                    path: '/',
+                    id: 1
+                },
+                ...fillterByid(data , productId)[0].bread
+            ])
+        }else{
+            setBreads([])
         }
-    ]
+    }, [modal])
 
     return (
         <> 
-            <BreadCrumb paths={breadCrumb}/> : <SingleProductList/>
+            <BreadCrumb paths={breads}/> : <SingleProductList/>
         </>
     )
 }

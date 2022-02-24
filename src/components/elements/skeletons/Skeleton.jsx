@@ -3,7 +3,7 @@ import cls from '../../../scss/components/skeletons/skeleton.module.scss'
 const Skeleton = ({ styles }) => {
     const state = []
     
-    for(let i = 0; i < 10; i++){
+    for(let i = 0; i < 8; i++){
         state.push({ id: i })
     }
 

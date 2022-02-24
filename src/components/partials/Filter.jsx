@@ -1,7 +1,7 @@
 import cls from '../../scss/components/partials/filter.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { ProductPrice } from './ProductPrice'
-import { ProductColour } from './ProductColour'
+import { ProductColour, ProductStatus } from './ProductStatus'
 import { setProductViewLarge, setProductViewSmoll } from '../../store/slices/productItemSlice'
 
 const Filter = () => {
@@ -13,7 +13,7 @@ const Filter = () => {
             <div className={cls.filter_wrapper}>
                 <h3>Sort by</h3>
                 <ProductPrice/>
-                <ProductColour/>
+                <ProductStatus/>
             </div>
             <div className={cls.filter_view}>
                 <div 

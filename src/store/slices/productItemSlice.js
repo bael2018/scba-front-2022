@@ -1,24 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    maxPrice: '',
-    minPrice: '',
-    price: 'recommended',
+    price: 'Recommended',
+    status: 'Recommended',
     view: false,
     zoomImage: false,
-    productId: ''
+    productId: '',
 }
 
 const productItemSlice = createSlice({
     name: 'productItem',
     initialState,
     reducers: {
-        setMaxPrice: (state , action) => {
-            state.maxPrice = action.payload.max
-        },
-        setMinPrice: (state , action) => {
-            state.minPrice = action.payload.min
-        },
         setProductViewSmoll: state => {
             state.view = true
         },
@@ -29,19 +22,21 @@ const productItemSlice = createSlice({
             state.zoomImage = !state.zoomImage
         },
         setPrice: (state , action) => {
-            state.price = action.payload.price
+            state.price = action.payload
         },
         setProductId: (state , action) => {
             state.productId = action.payload.productId
+        },
+        setStatus: (state , action) => {
+            state.status = action.payload
         }
     }
 })
 
 export const {
     setProductId,
+    setStatus,
     changeCurrency,
-    setMaxPrice,
-    setMinPrice,
     setProductViewLarge,
     setProductViewSmoll,
     setPrice,

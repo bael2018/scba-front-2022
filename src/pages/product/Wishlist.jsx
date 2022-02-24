@@ -1,3 +1,4 @@
+import { useGetProductWishlistQuery } from "../../store/rtk-query/productWishlist"
 import { WishlistItem } from "../../components/elements/WishListItem"
 import { useGetProductsQuery } from "../../store/rtk-query/productsApi"
 import { Skeleton } from '../../components/elements/skeletons/Skeleton'
@@ -8,7 +9,6 @@ import { useSelector } from "react-redux"
 import { Empty } from "../../components/partials/Empty"
 import { Redirect } from "../../components/partials/Redirect"
 import { PagesTitle } from "../../components/elements/PagesTitle"
-import { useGetProductWishlistQuery } from "../../store/rtk-query/productWishlist"
 
 const Wishlist = () => {
     const { data , isLoading } = useGetProductWishlistQuery()

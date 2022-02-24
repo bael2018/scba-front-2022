@@ -16,17 +16,18 @@ const SingleProductFooter = ({ id }) => {
     const navigate = useNavigate()
 
     const productHandler = async (item , path) => {
-        if(JSON.parse(localStorage.getItem(rootContant.authToken))){
+        const userToken = JSON.parse(localStorage.getItem(rootContant.userToken))
+        if(userToken){
             if(path === 'cart'){
                 await postCart({
                     body: { productId: item },
-                    id: JSON.parse(localStorage.getItem(rootContant.authToken)),
+                    id: userToken,
                     endpoint: path
                 }).unwrap()
             }else{
                 await postWishlist({
                     body: { productId: item },
-                    id: JSON.parse(localStorage.getItem(rootContant.authToken)),
+                    id: userToken,
                     endpoint: path
                 }).unwrap()
             }

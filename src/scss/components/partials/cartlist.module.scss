@@ -13,3 +13,25 @@
         background: $app-bgColor;
     }
 }
+
+.cart_btn{
+    text-align: center;
+    margin: 20px 0;
+
+    button{
+        border-radius: 5px;
+        cursor: pointer;
+        color: $app-bgColor;
+        border: none;
+        outline: none;
+        font-weight: 700;
+        padding: 10px 25px;
+        font-size: 17px;
+        transition: .3s;
+        background: $app-color;
+
+        &:hover{
+            color: white;
+        }
+    }
+}
