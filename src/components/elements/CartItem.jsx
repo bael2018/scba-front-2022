@@ -10,7 +10,6 @@ import {
     decrementTotalQuantity, 
     incrementTotalPrice, 
     incrementTotalQuantity, 
-    removeCartActive, 
     setCartActive, 
     setTotalDiscountPrice, 
     setTotalPrice, 

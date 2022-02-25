@@ -7,7 +7,7 @@ import { rootContant } from "../../constants";
 import { useSelector } from 'react-redux';
 
 const Account = () => {
-    const { email , id} = useSelector(state => state.auth)
+    const { email } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 

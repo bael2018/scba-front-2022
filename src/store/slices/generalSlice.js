@@ -26,9 +26,6 @@ const generalSlice = createSlice({
         setCartActive: state => {
             state.isCart = true
         },
-        removeCartActive: state => {
-            state.isCart = false
-        },
         incrementTotalQuantity: state => {
             state.totalQuantity = state.totalQuantity + 1
         },
@@ -63,7 +60,6 @@ export const {
     setTotalPrice,
     setTotalQuantity,
     setCartActive,
-    removeCartActive,
     changeCurrency, 
     setSearchModal 
 } = generalSlice.actions

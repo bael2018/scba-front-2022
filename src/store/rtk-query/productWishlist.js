@@ -1,11 +1,12 @@
 import { createApi , fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { rootContant, rootTagType } from '../../constants'
+import { configApi } from '../../constants/api'
 
 export const productWishlist = createApi({
     reducerPath: 'productWishlist',
     tagTypes: [rootTagType.PRODUCT_WISHLIST_TAG],
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_FIREBASE_DATABASE_URL
+        baseUrl: configApi.REACT_APP_FIREBASE_DATABASE_URL
     }),
     endpoints: builder => ({
         getProductWishlist: builder.query({

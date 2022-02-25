@@ -1,11 +1,12 @@
 import { createApi , fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { rootContant, rootTagType } from '../../constants'
+import { configApi } from '../../constants/api'
 
 export const categoryApi = createApi({
     reducerPath: 'categoryApi',
     tagTypes: [rootTagType.CATEGORY_TAG],
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_FIREBASE_DATABASE_URL
+        baseUrl: configApi.REACT_APP_FIREBASE_DATABASE_URL
     }),
     endpoints: builder => ({
         getCategories: builder.query({

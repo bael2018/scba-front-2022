@@ -1,11 +1,12 @@
 import { createApi , fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { rootContant, rootTagType } from '../../constants'
+import { configApi } from '../../constants/api'
 
 export const productCartApi = createApi({
     reducerPath: 'productCartApi',
     tagTypes: [rootTagType.PRODUCT_CART_TAG],
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_FIREBASE_DATABASE_URL
+        baseUrl: configApi.REACT_APP_FIREBASE_DATABASE_URL
     }),
     endpoints: builder => ({
         getProductCart: builder.query({

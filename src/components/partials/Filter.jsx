@@ -1,7 +1,7 @@
 import cls from '../../scss/components/partials/filter.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { ProductPrice } from './ProductPrice'
-import { ProductColour, ProductStatus } from './ProductStatus'
+import { ProductStatus } from './ProductStatus'
 import { setProductViewLarge, setProductViewSmoll } from '../../store/slices/productItemSlice'
 
 const Filter = () => {
