@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/productprice.module.scss'
+import cls from '../../scss/components/elements/productPrice.module.scss'
 import { AiOutlineDown } from 'react-icons/ai'
 import { useState } from 'react'
 import { setActivePrice } from '../../utilities/activeKey'

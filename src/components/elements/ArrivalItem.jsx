@@ -1,4 +1,4 @@
-import cls from '../../scss/components/elements/arrivalitem.module.scss'
+import cls from '../../scss/components/elements/arrivalItem.module.scss'
 import { setProductId } from '../../store/slices/productItemSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'

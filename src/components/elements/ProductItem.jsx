@@ -1,6 +1,6 @@
 import { useGetProductWishlistQuery, usePostProductWishlistMutation } from '../../store/rtk-query/productWishlist'
 import { useGetProductCartQuery, usePostProductCartMutation } from '../../store/rtk-query/productCartApi'
-import cls from '../../scss/components/elements/productitem.module.scss'
+import cls from '../../scss/components/elements/productItem.module.scss'
 import { mathCurrency } from '../../utilities/mathCurrency'
 import { currencyIcon } from '../../utilities/currencyIcon'
 import { BiBasket } from 'react-icons/bi'
