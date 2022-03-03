@@ -11,6 +11,20 @@
         margin-left: 0; 
     }
 
+    @media screen and (max-width: 500px){
+        margin-right: 20px;
+        width: 130px;
+
+        div{
+            height: 100px !important;
+            bottom: -97px !important;
+
+            p{
+                font-size: 13px !important;
+            }
+        }
+    }
+
     &_active{
         border: 1px solid yellow;
         border-bottom: 1px solid transparent !important;
