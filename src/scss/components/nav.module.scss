@@ -6,11 +6,32 @@
     align-items: center;
     justify-content: space-between;
 
+    &_burger{
+        display: none;
+    }
+
+    &_head{
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 1050px){
+
+        &_burger{
+            display: block;
+            color: $app-color;
+            font-size: 30px;
+            margin-top: 10px;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+    }
+
     &_child{
         display: flex;
         align-items: center;
         
-        &_cart{
+        &_counter{
             position: absolute;
             color: $app-bgColor;
             outline: none;
@@ -37,49 +58,61 @@
             align-items: center;
             list-style-type: none;
 
-            a{
-                cursor: pointer;
-                display: block;
-                padding: 30px 10px;
-                text-decoration: none;
-                margin-left: 20px;
-                position: relative;
+            @media screen and (max-width: 1050px){
+                margin: 25px 0;
                 
-                span{
-                    position: relative;
-                    color: white;
-                    font-weight: bold;
-                    display: flex;
-                    transition: .3s;
-                    font-size: 13px;
-
-                    svg{
-                        margin-right: 5px;
-                        color: $app-color;
-                        transition: .3s;
-                    }
-                }
-
-                &:hover span svg,
-                &:hover span{
-                    color: #292929;
-                }
-
-                &::before{
-                    content: '';
-                    position: absolute;
-                    left: 0%;
-                    top: 0;
-                    transition: .3s;
-                    height: 0%;
-                    width: 100%;
-                    background: $app-color;
-                }
-
-                &:hover::before{
-                    height: 100%;
+                div{
+                    display: none !important;
                 }
             }
+            
+            div{
+               display: flex;
+
+                a{
+                    cursor: pointer;
+                    display: block;
+                    padding: 30px 10px;
+                    text-decoration: none;
+                    margin-left: 20px;
+                    position: relative;
+                    
+                    span{
+                        position: relative;
+                        color: white;
+                        font-weight: bold;
+                        display: flex;
+                        transition: .3s;
+                        font-size: 13px;
+
+                        svg{
+                            margin-right: 5px;
+                            color: $app-color;
+                            transition: .3s;
+                        }
+                    }
+
+                    &:hover span svg,
+                    &:hover span{
+                        color: #292929;
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 0%;
+                        top: 0;
+                        transition: .3s;
+                        height: 0%;
+                        width: 100%;
+                        background: $app-color;
+                    }
+
+                    &:hover::before{
+                        height: 100%;
+                    }
+                }
+           }
 
             .nav_child_right_money{
                 color: white;

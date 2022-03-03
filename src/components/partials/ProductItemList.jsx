@@ -1,11 +1,10 @@
 import { useGetProductsQuery } from "../../store/rtk-query/productsApi"
-import { filterProductItems } from "../../utilities/fillters"
+import { filterProductItems, productFilter } from "../../utilities/fillters"
 import { toArrayWithId } from "../../utilities/toArray"
 import { ProductItem } from '../elements/ProductItem'
 import { useMemo ,useState } from "react"
 import { useSelector } from "react-redux"
 import { Empty } from "./Empty"
-import { productFilter } from "../../utilities/productFilter"
 
 const ProductItemList = ({ first , second }) => {
     const { data } = useGetProductsQuery()

@@ -5,6 +5,20 @@
     padding-bottom: 15px;
     border-bottom: 1px solid white;
 
+    @media screen and (max-width: 950px){
+        & div:nth-child(1){
+            width: 40% !important;
+        }
+    
+        & div:nth-child(2){
+            width: 60% !important;
+        }
+    }
+
+    @media screen and (max-width: 850px){
+        display: none;
+    }
+
     & div:nth-child(1){
         width: 60%;
     }

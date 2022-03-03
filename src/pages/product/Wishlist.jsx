@@ -17,11 +17,6 @@ const Wishlist = () => {
 
     const breadCrumb = [
         {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
-        {
             title: 'wishlist',
             active: true,
             path: '/wishlist',

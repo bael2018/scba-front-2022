@@ -13,11 +13,6 @@ const Cart = () => {
 
     const breadCrumb = [
         {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
-        {
             title: 'cart',
             active: true,
             path: '/cart',
@@ -31,9 +26,11 @@ const Cart = () => {
             <div className={cls.cart}>
                 <PagesTitle text={'Shopping cart'}/>
                 {
-                    isAuth ? (
+                    isAuth ? 
+                    (
                         isLoading ? <Skeleton styles={'cart'}/> : <CartList/>
-                    ) : <Redirect text={'cart'}/>
+                    ) : 
+                    <Redirect text={'cart'}/>
                 }
             </div>
         </section>

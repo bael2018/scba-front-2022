@@ -18,11 +18,10 @@ const Login = () => {
             .then(({ user }) => {
                 dispatch(setAuthStatus())
                 dispatch(setUser({
-                    email: user.email,
                     id: user.uid,
                 }))
 
-                localStorage.setItem(rootContant.userToken , JSON.stringify(user.uid))
+                sessionStorage.setItem(rootContant.userToken , JSON.stringify(user.uid))
                 navigate('/')
 
                 dispatch(setModal({

@@ -11,6 +11,10 @@
             display: inline;
             margin: 0 auto;
 
+            @media screen and (max-width: 550px){
+                font-size: 40px;
+            }
+
             span{
                 color: yellow;
             }
@@ -38,5 +42,9 @@
         flex-wrap: wrap;
         align-items: center;
         margin-top: 50px;
+
+        @media screen and (max-width: 550px){
+            justify-content: center;
+        }
     }
 }

@@ -12,12 +12,20 @@
             padding-right: 20px;
             border-right: 1px solid #b6b6b6;
             margin: 0;
+
+            @media screen and (max-width: 800px){
+                display: none;
+            }
         }
     }
 
     &_view{
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: 800px){
+            display: none;
+        }
 
         &_active{
             span{

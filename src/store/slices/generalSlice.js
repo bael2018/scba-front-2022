@@ -7,7 +7,8 @@ const initialState = {
     totalQuantity: 0,
     totalPrice: 0,
     totalDiscountPrice: 0,
-    isCartModal: false
+    isCartModal: false,
+    isBurgerMenu: false
 }
 
 const generalSlice = createSlice({
@@ -22,6 +23,9 @@ const generalSlice = createSlice({
         },
         setSearchModal: state => {
             state.search = !state.search
+        },
+        setBurgerMenu: state => {
+            state.isBurgerMenu = !state.isBurgerMenu
         },
         setCartActive: state => {
             state.isCart = true
@@ -51,6 +55,7 @@ const generalSlice = createSlice({
 })
 
 export const { 
+    setBurgerMenu,
     setCartModalActive,
     incrementTotalPrice,
     decrementTotalPrice,

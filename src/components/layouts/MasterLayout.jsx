@@ -1,4 +1,5 @@
 import { NavigationDefault } from '../shared/NavigationDefault'
+import { NavigationMobile } from '../shared/NavigationMobile'
 import { FooterDetault } from '../shared/FooterDefault'
 import cls from '../../scss/style.module.scss'
 import { Outlet } from 'react-router-dom'
@@ -13,20 +14,20 @@ import { CartModal } from '../partials/CartModal'
 
 const MasterLayout = () => {
     const show = useSelector(state => state.product_item.zoomImage)
-    const { search , isCartModal} = useSelector(state => state.general)
+    const { search , isCartModal , isBurgerMenu } = useSelector(state => state.general)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if(search || show || isCartModal){
+        if(search || show || isCartModal || isBurgerMenu){
             window.document.body.style.overflow = 'hidden'
         }else{
             window.document.body.style.overflowY = 'scroll'
             window.document.body.style.overflowX = 'hidden'
         }
-    } , [search , show , isCartModal]) 
+    } , [search , show , isCartModal , isBurgerMenu]) 
 
     useEffect(() => {
-        if(JSON.parse(localStorage.getItem(rootContant.userToken))){
+        if(JSON.parse(sessionStorage.getItem(rootContant.userToken))){
             dispatch(setAuthStatus())
         }
     } , [])
@@ -34,7 +35,10 @@ const MasterLayout = () => {
     return (
         <section className={cls.root}>
             <NavigationDefault/>
-            <Outlet/>
+            <NavigationMobile/>
+            <div>
+                <Outlet/>
+            </div>
             <FooterDetault/>
             <Search/>
             <Modal/>

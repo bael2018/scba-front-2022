@@ -14,14 +14,7 @@ const SingleProductPage = () => {
 
     useEffect(() => {
         if(fillterByid(data , productId).length){
-            setBreads([
-                {
-                    title: 'Home',
-                    path: '/',
-                    id: 1
-                },
-                ...fillterByid(data , productId)[0].bread
-            ])
+            setBreads([...fillterByid(data , productId)[0].bread])
         }else{
             setBreads([])
         }

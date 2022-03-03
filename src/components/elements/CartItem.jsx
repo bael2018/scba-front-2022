@@ -38,7 +38,7 @@ const CartItem = ({ title , mainImage , price , discountPrice , cartId }) => {
 
     const deleteBtnHandler = async () => {
         await deleteProduct({ 
-            id: JSON.parse(localStorage.getItem(rootContant.userToken)), 
+            id: JSON.parse(sessionStorage.getItem(rootContant.userToken)), 
             endpoint: 'cart',
             cartId
         }).unwrap()

@@ -23,4 +23,12 @@
         margin-top: 10px;
         color: rgb(230, 230, 230);
     }
+
+    @media screen and (max-width: 800px){
+        font-size: 23px;
+
+        span{
+            font-size: 28px;
+        }
+    }
 }

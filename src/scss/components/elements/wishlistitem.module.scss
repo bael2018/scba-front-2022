@@ -3,17 +3,44 @@
     margin: 0 .5%;
     margin-bottom: 30px;
 
-    &_header{
-        h3{
-            color: white;
-            margin-top: 0;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            font-size: 25px;
-            height: 35px;
-            overflow: hidden;
+    @media screen and (max-width: 1100px){
+        width: 32%;
+    }
+
+    @media screen and (max-width: 800px){
+        width: 49%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 100%;
+
+        &_header{
+            &_image{
+                height: 370px !important;
+            }
         }
 
+        &_body{
+            div{
+                button{
+                    padding: 15px 0 !important;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        &_header{
+            &_image{
+                height: 330px !important;
+            }
+        }
+    }
+
+    &_header{
         &_image{
             height: 300px;
 
@@ -27,6 +54,16 @@
 
     &_body{
         margin-top: 20px;
+
+        h3{
+            color: white;
+            margin-top: 0;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            font-size: 25px;
+            height: 35px;
+            overflow: hidden;
+        }
 
         &_active{
             background: yellow !important;

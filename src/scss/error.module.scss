@@ -5,6 +5,36 @@
     align-items: center;
     justify-content: center;
 
+    @media screen and(max-width: 650px){
+       height: 350px;
+
+        div{
+            h1{
+                font-size: 55px !important;
+            }
+
+            h4{
+                font-size: 20px !important;
+            }
+
+            p{
+                width: 80% !important;
+            }
+        }
+    }
+
+    @media screen and(max-width: 650px){
+        div{
+            h1{
+                font-size: 45px !important;
+            }
+
+            h4{
+                font-size: 18px !important;
+            }
+        }
+    }
+
     div{
         text-align: center;
 

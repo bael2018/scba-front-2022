@@ -47,3 +47,20 @@
         }
     }
 }
+
+.content{
+    margin-top: 15px;
+
+    h3{
+        margin-bottom: 8px;
+    }
+
+    p{
+        margin: 0;
+        color: white;
+        height: 70px;
+        overflow: hidden;
+        line-height: 1.6;
+        font-weight: 300;
+    }
+}

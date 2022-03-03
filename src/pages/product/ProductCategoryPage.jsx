@@ -11,11 +11,6 @@ const ProductCategoryPage = () => {
 
     const breadCrumb = [
         {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
-        {
             title: id,
             active: true,
             path: `/product/${id}`,

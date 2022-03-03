@@ -3,6 +3,12 @@
 .account{
     margin-top: 30px;
 
+    @media screen and(max-width: 650px){
+        h1{
+            font-size: 35px !important;
+        }
+    }
+
     h1{
         color: white;
         font-size: 40px;

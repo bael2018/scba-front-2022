@@ -12,6 +12,24 @@
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
 
+    .search_closer2{
+        display: none !important;
+
+        @media screen and (max-width: 1050px){
+            display: flex !important;
+            right: 2% !important;
+        }
+
+        @media screen and (max-width: 800px){
+            right: 5% !important;
+        }
+
+        @media screen and (max-width: 500px){
+            right: 3% !important;
+        }
+    }
+
+    .search_closer2,
     &_closer{
         position: absolute;
         top: 30px;
@@ -26,6 +44,10 @@
         background: $app-color;
         cursor: pointer;
 
+        @media screen and (max-width: 1050px){
+            display: none;
+        }
+
         svg{
             color: white;
         }
@@ -38,8 +60,13 @@
         position: relative;
         box-sizing: border-box;
         padding: 40px;
+        padding-bottom: 0px;
         height: 100%;
         overflow-y: scroll;
+
+        @media screen and (max-width: 800px){
+            width: 100%;
+        }
 
         &::-webkit-scrollbar{
             background: none;
@@ -58,6 +85,14 @@
             width: 100%;
             justify-content: space-between;
 
+            @media screen and (max-width: 1050px){
+                width: 95%;
+            }
+
+            @media screen and (max-width: 800px){
+                width: 90%;
+            }
+
             input{
                 width: 100%;
                 box-sizing: border-box;
@@ -73,6 +108,11 @@
                 color: white;
                 font-size: 20px;
                 height: 100%;
+                
+                @media screen and (max-width: 600px){
+                    font-size: 18px;
+                    padding-right: 80px;
+                }
 
                 &::placeholder{
                     color: white;
@@ -91,6 +131,19 @@
                 border-radius: 10px;
                 transition: .3s;
                 width: 5%;
+
+                @media screen and (max-width: 900px){
+                    width: 8%;
+                    top: -2px;
+                }
+
+                @media screen and (max-width: 440px){
+                    width: 10%;
+                }
+
+                @media screen and (max-width: 400px){
+                    width: 12%;
+                }
                 
                 &:hover{
                     color: $app-color;
@@ -104,6 +157,10 @@
                 display: none;
                 color: white;
                 font-size: 20px;
+
+                @media screen and (max-width: 600px){
+                    right: 45px;
+                }
             }
 
             .activeTimes{
@@ -115,7 +172,10 @@
             display: flex;
             flex-wrap: wrap;
             margin-top: 40px;
-            justify-content: space-between;
+
+            @media screen and (max-width: 650px){
+                justify-content: center;
+            }
 
             &_search{
                 display: flex;
@@ -132,6 +192,30 @@
                     color: $app-color;
                     margin-bottom: 15px;
                     font-size: 60px;
+                }
+
+                @media screen and (max-width: 1050px){
+                    font-size: 37px;
+
+                    svg{
+                        font-size: 50px;
+                    }
+                }
+
+                @media screen and (max-width: 650px){
+                    font-size: 33px;
+
+                    svg{
+                        font-size: 45px;
+                    }
+                }
+
+                @media screen and (max-width: 450px){
+                    font-size: 29px;
+                }
+
+                @media screen and (max-width: 400px){
+                    font-size: 27px;
                 }
             }
         }

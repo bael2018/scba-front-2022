@@ -17,6 +17,12 @@
         color:$app-color;
         background: #292929;
     }
+    
+    @media screen and (max-width: 1050px){
+        background: yellow;
+        transition: .3s;
+        border-bottom: 1px solid yellow !important;
+    }
 }
 
 .footer_child_active{

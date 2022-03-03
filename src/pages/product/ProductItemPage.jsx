@@ -17,11 +17,6 @@ const ProductItemPage = () => {
 
     const breadCrumb = [
         {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
-        {
             title: first,
             path: `/product/${first}`,
             id: 2

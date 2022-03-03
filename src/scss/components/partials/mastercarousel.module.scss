@@ -2,6 +2,10 @@
     width: 100%;
     height: 400px;
 
+    @media screen and (max-width: 800px){
+        height: 370px;
+    }
+
     &_child{
         height: 100%;
         position: relative;

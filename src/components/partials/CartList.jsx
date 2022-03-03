@@ -15,8 +15,8 @@ const CartList = () => {
     
     const confirmBtnHandler = () => {
         dispatch(setCartModalActive())
-    }       
-
+    }     
+    
     return (
         toArrayWithId(data).length ? (
             <>
@@ -28,7 +28,11 @@ const CartList = () => {
                                 return toArrayWithId(data).map(({ productId , id: cartId }) => {
                                     if(item.id === productId){
                                         let body = {...item , cartId: cartId}
-                                        return <CartItem key={item.id} {...body}/>
+                                        return <CartItem 
+                                            key={item.id} 
+                                            {...body} 
+                                            length={toArrayWithId(data).length}
+                                        />
                                     }
                                 })
                             })

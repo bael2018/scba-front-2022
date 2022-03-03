@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .auth{
     text-align: center;
     width: 40%;
@@ -17,11 +19,33 @@
             transition: .3s;
             padding: 7px 15px;
             border-radius: 30px;
-            border: 1px solid yellow;
+            border: 1px solid $app-color;
+
+            @media screen and (max-width: 650px){
+                font-size: 17px;
+            }
         }
 
         &_btn{
-            background: yellow;
+            background: $app-color;
         }
+    }
+
+    &_body{
+        @media screen and (max-width: 1000px){
+            margin-top: 40px;
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        width: 60%;
+    }
+
+    @media screen and (max-width: 650px){
+        width: 70%;
+    }
+
+    @media screen and (max-width: 450px){
+        width: 80%;
     }
 }

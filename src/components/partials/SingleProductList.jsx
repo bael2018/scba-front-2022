@@ -33,7 +33,7 @@ const SingleProductList = () => {
             <>
                 {
                     fillterByid(data , productId)
-                    .map(({ images , productCode , id , price , discountPrice , color , size , title }) => {
+                    .map(({ images , productCode , id , price , discountPrice , color , size , title , description }) => {
                         return (
                             <div key={id} className={cls.single}>
                                 <ProductImages 
@@ -55,6 +55,7 @@ const SingleProductList = () => {
                                         discountPrice={discountPrice}
                                     />
                                     <ProductParams 
+                                        description={description}
                                         color={color} 
                                         size={size}
                                     />

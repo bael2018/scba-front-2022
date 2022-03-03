@@ -16,7 +16,7 @@ const SingleProductFooter = ({ id }) => {
     const navigate = useNavigate()
 
     const productHandler = async (item , path) => {
-        const userToken = JSON.parse(localStorage.getItem(rootContant.userToken))
+        const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken))
         if(userToken){
             if(path === 'cart'){
                 await postCart({

@@ -24,11 +24,10 @@ const Register = () => {
                 
                 dispatch(setAuthStatus())
                 dispatch(setUser({
-                    email: user.email,
                     id: uid
                 }))
 
-                localStorage.setItem(rootContant.userToken , JSON.stringify(user.uid))
+                sessionStorage.setItem(rootContant.userToken , JSON.stringify(user.uid))
                 navigate('/')
 
                 dispatch(setModal({

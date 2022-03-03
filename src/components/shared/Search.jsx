@@ -46,6 +46,12 @@ const Search = () => {
                 <AiOutlineClose/>
             </span>
             <div className={cls.search_wrapper}>
+                <span 
+                    className={cls.search_closer2}
+                    onClick={() => dispatch(setSearchModal())}
+                >
+                    <AiOutlineClose/>
+                </span>
                 <div className={cls.search_wrapper_header}>
                     <input 
                         type="text"
@@ -66,12 +72,12 @@ const Search = () => {
                     }
                     {
                         
-                        base.length ? base.map(item => <SearchItem key={item.id} {...item}/>) : 
+                        base.length ? 
+                        base.map(item => <SearchItem key={item.id} {...item}/>) : 
                         text ? 
                         <div className={cls.search_wrapper_body_search}> 
-                        <BiErrorCircle/> No products found ! 
-                        </div> : 
-                        null
+                            <BiErrorCircle/> No products found ! 
+                        </div> : null
                     }
                 </div>
             </div>

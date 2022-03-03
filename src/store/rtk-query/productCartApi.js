@@ -10,7 +10,9 @@ export const productCartApi = createApi({
     }),
     endpoints: builder => ({
         getProductCart: builder.query({
-            query: () => `users/${JSON.parse(localStorage.getItem(rootContant.userToken))}/cart${rootContant.dotJson}`,
+            query: () => `users/${
+                JSON.parse(sessionStorage.getItem(rootContant.userToken))
+            }/cart${rootContant.dotJson}`,
             providesTags: () => [rootTagType.PRODUCT_CART_TAG]
         }),
         postProductCart: builder.mutation({

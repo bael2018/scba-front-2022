@@ -10,6 +10,10 @@
     width: 100%;
     font-weight: 600;
 
+    @media screen and (max-width: 500px){
+        font-size: 27px;
+    }
+
     span{
         margin: 0 10px;
         color: $app-color;

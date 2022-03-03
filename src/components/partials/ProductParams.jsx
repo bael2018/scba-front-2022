@@ -1,6 +1,6 @@
 import cls from '../../scss/components/partials/productparams.module.scss'
 
-const ProductParams = ({ color , size }) => {
+const ProductParams = ({ color , size , description }) => {
     return (
         <>
             {
@@ -23,6 +23,10 @@ const ProductParams = ({ color , size }) => {
                 </div>
                 )
             }
+            <div className={cls.content}>
+                <h3>Description</h3>
+                <p>{ description }</p>
+            </div>
         </>
     )
 }

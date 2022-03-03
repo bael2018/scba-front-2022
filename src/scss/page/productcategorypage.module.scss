@@ -5,4 +5,12 @@
     align-items: center;
     flex-wrap: wrap;
     margin-top: 30px;
+
+    @media screen and (max-width: 850px){
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 600px){
+        justify-content: center;
+    }
 }

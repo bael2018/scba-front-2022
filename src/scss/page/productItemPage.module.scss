@@ -2,4 +2,8 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 800px){
+        justify-content: space-between;
+    }
 }

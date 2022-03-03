@@ -10,7 +10,9 @@ export const productWishlist = createApi({
     }),
     endpoints: builder => ({
         getProductWishlist: builder.query({
-            query: () => `users/${JSON.parse(localStorage.getItem(rootContant.userToken))}/wishlist${rootContant.dotJson}`,
+            query: () => `users/${
+                JSON.parse(sessionStorage.getItem(rootContant.userToken))
+            }/wishlist${rootContant.dotJson}`,
             providesTags: () => [rootTagType.PRODUCT_WISHLIST_TAG]
         }),
         postProductWishlist: builder.mutation({

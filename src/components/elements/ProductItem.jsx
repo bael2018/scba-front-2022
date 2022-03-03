@@ -26,7 +26,7 @@ const ProductItem = ({ product , path }) => {
     const { mainImage , price , discountPrice , title , id } = product
 
     const productHandler = async path => {
-        const userToken = JSON.parse(localStorage.getItem(rootContant.userToken))
+        const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken))
         if(userToken){
             if(path === 'cart'){
                 await postCart({

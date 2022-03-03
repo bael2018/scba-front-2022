@@ -9,9 +9,15 @@ export const userApi = createApi({
         baseUrl: configApi.REACT_APP_FIREBASE_DATABASE_URL
     }),
     endpoints: builder => ({
+        getUser: builder.query({
+            query: () => `users/${
+                JSON.parse(sessionStorage.getItem(rootContant.userToken))
+            }/about${rootContant.dotJson}`,
+            providesTags: () => [rootTagType.USER_TAG]
+        }),
         addUser: builder.mutation({
             query: ({ body , uid }) => ({
-                url: `users/${uid}${rootContant.dotJson}`,
+                url: `users/${uid}/about${rootContant.dotJson}`,
                 method: rootContant.post,
                 body
             }),
@@ -21,5 +27,6 @@ export const userApi = createApi({
 })
 
 export const {
+    useGetUserQuery,
     useAddUserMutation
 } = userApi

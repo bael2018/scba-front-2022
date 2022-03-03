@@ -4,14 +4,9 @@ import { Auth } from '../../components/shared/Auth';
 import { rootContant } from '../../constants';
 
 const Logged = () => {
-    const auth = JSON.parse(localStorage.getItem(rootContant.userToken))
+    const auth = JSON.parse(sessionStorage.getItem(rootContant.userToken))
 
     const breadCrumb = [
-        {
-            title: 'Home',
-            path: '/',
-            id: 1
-        },
         {
             title: 'user',
             active: true,

@@ -6,7 +6,7 @@ import { toArrayWithId } from '../../utilities/toArray'
 import { Currency } from './Currency'
 
 const WishlistItem = ({ title , mainImage , price , discountPrice , cartId , id }) => {
-    const userToken = JSON.parse(localStorage.getItem(rootContant.userToken))
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken))
     const [deleteProduct] = useDeleteProductWishlistMutation()
     const [ postCart ] = usePostProductCartMutation()
     const { data } = useGetProductCartQuery()
@@ -30,12 +30,12 @@ const WishlistItem = ({ title , mainImage , price , discountPrice , cartId , id 
     return (
         <div className={cls.select}>
             <div className={cls.select_header}>
-                <h3>{title}</h3>
                 <div className={cls.select_header_image}>
                     <img src={mainImage} alt="wishlistItem"/>
                 </div>
             </div>
             <div className={cls.select_body}>
+                <h3>{title}</h3>
                 <div>
                     {
                         discountPrice ? 
