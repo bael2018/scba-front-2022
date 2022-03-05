@@ -62,5 +62,9 @@
         overflow: hidden;
         line-height: 1.6;
         font-weight: 300;
+
+        @media screen and(max-width:1050px){
+            height: inherit;
+        }
     }
 }

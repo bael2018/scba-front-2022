@@ -8,6 +8,10 @@
         font-size: 30px;
         padding-bottom: 7px;
         border-bottom: 2px solid yellow;
+        
+        @media screen and (max-width: 410px){
+            padding-left: 10px;
+        }
     }
 
     &_wrapper{
@@ -28,12 +32,12 @@
 
             @media screen and (max-width: 410px){
                 h3{
-                    margin-left: 15px;
+                    margin-left: 10px;
                 }
 
                 ul{
                     li{ 
-                        margin: 0 20px;
+                        margin: 0 10px;
                     }
                 }
             }

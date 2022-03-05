@@ -93,7 +93,9 @@ const ProductItem = ({ product , path }) => {
                 <Link  
                     onClick={() => dispatch(setProductId({ productId: id }))}
                     to={path}
-                >DISCOVER</Link>
+                >
+                    DISCOVER
+                </Link>
             </div>
         </section>
     )
