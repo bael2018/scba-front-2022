@@ -3,8 +3,8 @@ import { setProductId } from '../../store/slices/productItemSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Currency } from './Currency'
-import { mathCurrency } from '../../utilities/mathCurrency'
 import { currencyIcon } from '../../utilities/currencyIcon'
+import { mathCurrency } from '../../utilities'
 
 const ArrivalItem = ({ mainImage , title , subCategory , id , category , price , discountPrice}) => {
     const state = useSelector(state =>  state.general.currency)

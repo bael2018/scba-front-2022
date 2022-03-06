@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
-import { mathCurrency } from "../../utilities/mathCurrency"
 import cls from '../../scss/components/elements/currency.module.scss'
+import { mathCurrency } from "../../utilities"
 import { currencyIcon } from "../../utilities/currencyIcon"
 
 const Currency = ({ discountPrice , price }) => {

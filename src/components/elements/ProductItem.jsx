@@ -1,7 +1,6 @@
 import { useGetProductWishlistQuery, usePostProductWishlistMutation } from '../../store/rtk-query/productWishlist'
 import { useGetProductCartQuery, usePostProductCartMutation } from '../../store/rtk-query/productCartApi'
 import cls from '../../scss/components/elements/productItem.module.scss'
-import { mathCurrency } from '../../utilities/mathCurrency'
 import { currencyIcon } from '../../utilities/currencyIcon'
 import { BiBasket } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,6 +10,7 @@ import { Currency } from './Currency'
 import { Link, useNavigate } from 'react-router-dom'
 import { rootContant } from '../../constants'
 import { toArrayWithId } from '../../utilities/toArray'
+import { mathCurrency } from '../../utilities'
 
 const ProductItem = ({ product , path }) => {
     const state = useSelector(state =>  state.general.currency)

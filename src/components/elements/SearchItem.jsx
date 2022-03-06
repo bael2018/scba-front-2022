@@ -1,11 +1,11 @@
 import { setProductId } from '../../store/slices/productItemSlice';
 import cls from '../../scss/components/elements/searchItem.module.scss';
 import { currencyIcon } from '../../utilities/currencyIcon';
-import { mathCurrency } from '../../utilities/mathCurrency';
 import { useSelector , useDispatch } from 'react-redux';
 import { Currency } from './Currency';
 import { Link } from 'react-router-dom';
 import { setSearchModal } from '../../store/slices/generalSlice';
+import { mathCurrency } from '../../utilities';
 
 const SearchItem = ({ title , price , discountPrice , mainImage , id , category , subCategory }) => {
     const state = useSelector(state =>  state.general.currency)

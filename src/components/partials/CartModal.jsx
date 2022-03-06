@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { setCartModalActive } from '../../store/slices/generalSlice'
 import { currencyIcon } from '../../utilities/currencyIcon'
-import { mathCurrency } from '../../utilities/mathCurrency'
+import { mathCurrency } from '../../utilities'
 
 const CartModal = () => {
     const { 
