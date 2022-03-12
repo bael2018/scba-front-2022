@@ -16,7 +16,9 @@ const ArrivalList = ({ activeText , title , text }) => {
             </div>
             <div className={cls.arrival_body}>
                 { 
-                    isLoading ? <Skeleton styles={'product'}/> : (
+                    isLoading ? 
+                    <Skeleton styles={'product'}/> : 
+                    (
                         toArrayWithId(data).filter(({ status: stat }) => stat === activeText).length ? (
                             toArrayWithId(data).filter(({ status: stat }) => stat === activeText)
                             .map(item => <ArrivalItem key={item.id} {...item}/>)

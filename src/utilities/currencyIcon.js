@@ -1,20 +1,20 @@
-import { BsCurrencyDollar } from "react-icons/bs"
-import { BiRuble } from "react-icons/bi"
+import { BsCurrencyDollar } from "react-icons/bs";
+import { BiRuble } from "react-icons/bi";
 
-export const currencyIcon = (state , rubleText = '' , dollarText = '') => {
-    if(state){
+export const currencyIcon = (state, rubleText = "", dollarText = "") => {
+    if (state) {
         return (
             <>
-                <BsCurrencyDollar/>
+                <BsCurrencyDollar />
                 {dollarText}
             </>
-        )
-    }else{
+        );
+    } else {
         return (
             <>
-                <BiRuble/>
+                <BiRuble />
                 {rubleText}
             </>
-        )
+        );
     }
-}
+};

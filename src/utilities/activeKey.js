@@ -1,39 +1,39 @@
-export const setActivePrice = (array , id) => {
-    const filteredArray = array.map(item => {
+export const setActivePrice = (array, id) => {
+    const filteredArray = array.map((item) => {
         return {
             ...item,
-            active: false
-        }
-    })
+            active: false,
+        };
+    });
 
-    return filteredArray.map(item => {
-        if(item.id === id){
+    return filteredArray.map((item) => {
+        if (item.id === id) {
             return {
                 ...item,
-                active: true
-            }
-        }else{
-            return item
+                active: true,
+            };
+        } else {
+            return item;
         }
-    })
-}
+    });
+};
 
-export const setActiveColour = (array , id) => {
-    return array.map(item => {
-        if(item.id === id){
-            if(item.active){
+export const setActiveColour = (array, id) => {
+    return array.map((item) => {
+        if (item.id === id) {
+            if (item.active) {
                 return {
                     ...item,
-                    active: !item.active
-                }
-            }else{
+                    active: !item.active,
+                };
+            } else {
                 return {
                     ...item,
-                    active: !item.active
-                }
+                    active: !item.active,
+                };
             }
-        }else{
-            return item
+        } else {
+            return item;
         }
-    })
-}
+    });
+};

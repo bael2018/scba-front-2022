@@ -1,37 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    price: 'Recommended',
-    status: 'Recommended',
+    price: "Recommended",
+    status: "Recommended",
     view: false,
     zoomImage: false,
-    productId: '',
-}
+    productId: "",
+};
 
 const productItemSlice = createSlice({
-    name: 'productItem',
+    name: "productItem",
     initialState,
     reducers: {
-        setProductViewSmoll: state => {
-            state.view = true
+        setProductViewSmoll: (state) => {
+            state.view = true;
         },
-        setProductViewLarge: state => {
-            state.view = false
+        setProductViewLarge: (state) => {
+            state.view = false;
         },
-        setZoomImage: state => {
-            state.zoomImage = !state.zoomImage
+        setZoomImage: (state) => {
+            state.zoomImage = !state.zoomImage;
         },
-        setPrice: (state , action) => {
-            state.price = action.payload
+        setPrice: (state, action) => {
+            state.price = action.payload;
         },
-        setProductId: (state , action) => {
-            state.productId = action.payload.productId
+        setProductId: (state, action) => {
+            state.productId = action.payload.productId;
         },
-        setStatus: (state , action) => {
-            state.status = action.payload
-        }
-    }
-})
+        setStatus: (state, action) => {
+            state.status = action.payload;
+        },
+    },
+});
 
 export const {
     setProductId,
@@ -40,6 +40,6 @@ export const {
     setProductViewLarge,
     setProductViewSmoll,
     setPrice,
-    setZoomImage
-} = productItemSlice.actions
-export default productItemSlice.reducer
+    setZoomImage,
+} = productItemSlice.actions;
+export default productItemSlice.reducer;
