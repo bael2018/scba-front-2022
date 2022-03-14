@@ -37,6 +37,14 @@ const WishlistItem = ({
         }
     };
 
+    const activeIconHandler = () => {
+        return toArrayWithId(data).map(({ productId }) => {
+            return ` ${
+                productId === id && cls.select_body_active
+            } `;
+        })
+    }
+
     return (
         <div className={cls.select}>
             <div className={cls.select_header}>
@@ -55,11 +63,7 @@ const WishlistItem = ({
                 </div>
                 <div>
                     <button
-                        className={toArrayWithId(data).map(({ productId }) => {
-                            return ` ${
-                                productId === id && cls.select_body_active
-                            } `;
-                        })}
+                        className={activeIconHandler()}
                         onClick={() => productHandler("cart")}
                     >
                         ADD TO CART
