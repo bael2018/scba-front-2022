@@ -5,7 +5,7 @@ import { rootContant } from "../../constants";
 import { useEffect } from "react";
 
 const Modal = () => {
-    const { display, state, description, title } = useSelector(
+    const { display, status, description, title } = useSelector(
         (state) => state.modal
     );
     const dispatch = useDispatch();
@@ -21,11 +21,11 @@ const Modal = () => {
             className={display ? `${cls.modal} ${cls.modal_active}` : cls.modal}
             style={{
                 border:
-                    state === rootContant.success
+                    status === rootContant.success
                         ? "3px solid #00e000"
-                        : state === rootContant.danger
+                        : status === rootContant.danger
                         ? "3px solid red"
-                        : state === rootContant.warning
+                        : status === rootContant.warning
                         ? "3px solid brown"
                         : "",
             }}

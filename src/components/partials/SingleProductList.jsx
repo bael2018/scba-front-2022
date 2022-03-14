@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Currency } from "../elements/Currency";
 import { Empty } from "./Empty";
 import { ProductImages } from "./ProductImages";
-import { ProductParams } from "./ProductParams";
+import ProductParams from "./ProductParams";
 import { ViewImage } from "./ViewImage";
 
 const SingleProductList = () => {

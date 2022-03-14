@@ -54,6 +54,14 @@ const ProductItem = ({ product, path }) => {
         }
     };
 
+    const activeIconHandler = (data) => {
+        return toArrayWithId(data).map(
+            ({ productId }) => {
+                return ` ${productId === id && cls.item_btn} `;
+            }
+        )
+    }
+
     return (
         <section className={view ? `${cls.item} ${cls.item_alt}` : cls.item}>
             <div className={cls.item_image}>
@@ -61,11 +69,7 @@ const ProductItem = ({ product, path }) => {
                 {isAuth ? (
                     <span
                         onClick={() => productHandler("wishlist")}
-                        className={toArrayWithId(wishlistData).map(
-                            ({ productId }) => {
-                                return ` ${productId === id && cls.item_btn} `;
-                            }
-                        )}
+                        className={activeIconHandler(wishlistData)}
                     >
                         <AiFillHeart />
                     </span>
@@ -77,11 +81,7 @@ const ProductItem = ({ product, path }) => {
                 {isAuth ? (
                     <span
                         onClick={() => productHandler("cart")}
-                        className={toArrayWithId(cartData).map(
-                            ({ productId }) => {
-                                return ` ${productId === id && cls.item_btn} `;
-                            }
-                        )}
+                        className={activeIconHandler(cartData)}
                     >
                         <BiBasket />
                     </span>

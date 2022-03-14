@@ -37,7 +37,7 @@ const Register = () => {
 
                     dispatch(
                         setModal({
-                            state: rootContant.success,
+                            status: rootContant.success,
                             title: "Account created !",
                             description: "welcome to SCBA shop",
                         })
@@ -46,7 +46,7 @@ const Register = () => {
                 .catch(() => {
                     dispatch(
                         setModal({
-                            state: rootContant.danger,
+                            status: rootContant.danger,
                             title: "Invalid inputs !",
                             description: "enter email and password",
                         })
@@ -55,7 +55,7 @@ const Register = () => {
         } else {
             dispatch(
                 setModal({
-                    state: rootContant.danger,
+                    status: rootContant.danger,
                     title: "Empty inputs !",
                     description: "enter email and password",
                 })

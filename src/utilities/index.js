@@ -3,7 +3,7 @@ export const toLower = (str) => {
 };
 
 export const mathCurrency = (billState, num) => {
-    const currentBill = 74;
+    const currentBill = 84;
 
     if (billState) {
         const res = num / currentBill;

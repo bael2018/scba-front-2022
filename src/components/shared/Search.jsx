@@ -32,7 +32,7 @@ const Search = () => {
         } else {
             dispatch(
                 setModal({
-                    state: rootContant.danger,
+                    status: rootContant.danger,
                     title: "Fill in input !",
                     description: "enter something inside",
                 })

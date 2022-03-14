@@ -44,16 +44,20 @@ const SingleProductFooter = ({ id }) => {
         }
     };
 
+    const activeIconHandler = (data , styles) => {
+        return toArrayWithId(data).map(({ productId }) => {
+            return ` ${
+                productId === id && styles
+            } `;
+        })
+    }
+
     return (
         <div className={cls.product_lower}>
             {isAuth ? (
                 <button
                     onClick={() => productHandler(id, "cart")}
-                    className={toArrayWithId(cartData).map(({ productId }) => {
-                        return ` ${
-                            productId === id && cls.product_lower_cart
-                        } `;
-                    })}
+                    className={activeIconHandler(cartData , cls.product_lower_cart)}
                 >
                     ADD TO CART
                 </button>
@@ -63,13 +67,7 @@ const SingleProductFooter = ({ id }) => {
             {isAuth ? (
                 <span
                     onClick={() => productHandler(id, "wishlist")}
-                    className={toArrayWithId(wishlistData).map(
-                        ({ productId }) => {
-                            return ` ${
-                                productId === id && cls.product_lower_wish
-                            } `;
-                        }
-                    )}
+                    className={activeIconHandler(wishlistData , cls.product_lower_wish)}
                 >
                     <AiFillHeart />
                 </span>

@@ -20,7 +20,7 @@ const Account = () => {
 
         dispatch(
             setModal({
-                state: rootContant.success,
+                status: rootContant.success,
                 title: "Logged out !",
                 description: "comeback as soon as u can",
             })

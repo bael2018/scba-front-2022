@@ -31,7 +31,7 @@ const Login = () => {
 
                     dispatch(
                         setModal({
-                            state: rootContant.success,
+                            status: rootContant.success,
                             title: "Account logged in !",
                             description: "welcome back to SCBA shop",
                         })
@@ -40,7 +40,7 @@ const Login = () => {
                 .catch(() => {
                     dispatch(
                         setModal({
-                            state: rootContant.danger,
+                            status: rootContant.danger,
                             title: "Invalid inputs !",
                             description: "enter email and password",
                         })
@@ -49,7 +49,7 @@ const Login = () => {
         } else {
             dispatch(
                 setModal({
-                    state: rootContant.danger,
+                    status: rootContant.danger,
                     title: "Empty inputs !",
                     description: "enter email and password",
                 })

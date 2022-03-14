@@ -1,3 +1,4 @@
+import { memo } from "react";
 import cls from "../../scss/components/partials/productparams.module.scss";
 
 const ProductParams = ({ color, size, description }) => {
@@ -27,4 +28,4 @@ const ProductParams = ({ color, size, description }) => {
     );
 };
 
-export { ProductParams };
+export default memo(ProductParams);
