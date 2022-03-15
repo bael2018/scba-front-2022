@@ -3,8 +3,8 @@ import cls from "../../scss/components/elements/wishlistitem.module.scss";
 import {
     useGetProductCartQuery,
     usePostProductCartMutation,
-} from "../../store/rtk-query/productCartApi";
-import { useDeleteProductWishlistMutation } from "../../store/rtk-query/productWishlist";
+} from "../../store/query/productCartApi";
+import { useDeleteProductWishlistMutation } from "../../store/query/productWishlist";
 import { toArrayWithId } from "../../utilities/toArray";
 import { Currency } from "./Currency";
 

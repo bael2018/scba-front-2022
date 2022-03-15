@@ -1,5 +1,5 @@
 import cls from "../../../scss/components/partials/arrivallist.module.scss";
-import { useGetProductsQuery } from "../../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../../store/query/productsApi";
 import { toArrayWithId } from "../../../utilities/toArray";
 import { ArrivalItem } from "../../elements/ArrivalItem";
 import { Skeleton } from "../../elements/skeletons/Skeleton";

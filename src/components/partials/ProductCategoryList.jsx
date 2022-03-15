@@ -1,4 +1,4 @@
-import { useGetCategoriesQuery } from "../../store/rtk-query/categoryApi";
+import { useGetCategoriesQuery } from "../../store/query/categoryApi";
 import cls from "../../scss/components/partials/productcategorylist.module.scss";
 import { toArrayWithId } from "../../utilities/toArray";
 import { Link } from "react-router-dom";

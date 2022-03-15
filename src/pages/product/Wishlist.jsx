@@ -1,6 +1,6 @@
-import { useGetProductWishlistQuery } from "../../store/rtk-query/productWishlist";
+import { useGetProductWishlistQuery } from "../../store/query/productWishlist";
 import { WishlistItem } from "../../components/elements/WishListItem";
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { Skeleton } from "../../components/elements/skeletons/Skeleton";
 import { BreadCrumb } from "../../components/partials/BreadCrumb";
 import cls from "../../scss/page/wishlist.module.scss";

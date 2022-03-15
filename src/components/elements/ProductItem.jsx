@@ -1,11 +1,11 @@
 import {
     useGetProductWishlistQuery,
     usePostProductWishlistMutation,
-} from "../../store/rtk-query/productWishlist";
+} from "../../store/query/productWishlist";
 import {
     useGetProductCartQuery,
     usePostProductCartMutation,
-} from "../../store/rtk-query/productCartApi";
+} from "../../store/query/productCartApi";
 import cls from "../../scss/components/elements/productItem.module.scss";
 import { currencyIcon } from "../../utilities/currencyIcon";
 import { BiBasket } from "react-icons/bi";

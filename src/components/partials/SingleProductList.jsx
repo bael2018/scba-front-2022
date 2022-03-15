@@ -1,5 +1,5 @@
 import cls from "../../scss/components/partials/singleproductlist.module.scss";
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { setZoomImage } from "../../store/slices/productItemSlice";
 import { SingleProductFooter } from "./SingleProductFooter";
 import { fillterByid } from "../../utilities/fillters";

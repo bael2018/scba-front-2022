@@ -1,4 +1,4 @@
-import { useGetProductCartQuery } from "../../store/rtk-query/productCartApi";
+import { useGetProductCartQuery } from "../../store/query/productCartApi";
 import { Skeleton } from "../../components/elements/skeletons/Skeleton";
 import { BreadCrumb } from "../../components/partials/BreadCrumb";
 import { PagesTitle } from "../../components/elements/PagesTitle";

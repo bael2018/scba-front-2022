@@ -1,4 +1,4 @@
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { useSelector } from "react-redux";
 import cls from "../../scss/components/search.module.scss";
 import { AiOutlineClose } from "react-icons/ai";

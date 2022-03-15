@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Form } from "../Form";
 import { useNavigate } from "react-router-dom";
 import { setModal } from "../../../store/slices/modalSlice";
-import { useAddUserMutation } from "../../../store/rtk-query/usersApi";
+import { useAddUserMutation } from "../../../store/query/usersApi";
 import { rootContant } from "../../../constants";
 
 const Register = () => {

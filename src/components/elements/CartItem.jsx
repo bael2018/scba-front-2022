@@ -1,4 +1,4 @@
-import { useDeleteProductCartMutation } from "../../store/rtk-query/productCartApi";
+import { useDeleteProductCartMutation } from "../../store/query/productCartApi";
 import cls from "../../scss/components/elements/cartItem.module.scss";
 import { currencyIcon } from "../../utilities/currencyIcon";
 import { useDispatch, useSelector } from "react-redux";

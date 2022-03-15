@@ -1,5 +1,5 @@
 import { ProductCategoryList } from "../../components/partials/ProductCategoryList";
-import { useGetCategoriesQuery } from "../../store/rtk-query/categoryApi";
+import { useGetCategoriesQuery } from "../../store/query/categoryApi";
 import { Skeleton } from "../../components/elements/skeletons/Skeleton";
 import cls from "../../scss/page/productcategorypage.module.scss";
 import { BreadCrumb } from "../../components/partials/BreadCrumb";

@@ -1,4 +1,4 @@
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { filterProductItems, productFilter } from "../../utilities/fillters";
 import { toArrayWithId } from "../../utilities/toArray";
 import { ProductItem } from "../elements/ProductItem";

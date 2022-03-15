@@ -4,7 +4,7 @@ import { removeAuthStatus, removeUser } from "../../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import { setModal } from "../../store/slices/modalSlice";
 import { rootContant } from "../../constants";
-import { useGetUserQuery } from "../../store/rtk-query/usersApi";
+import { useGetUserQuery } from "../../store/query/usersApi";
 import { toArrayWithId } from "../../utilities/toArray";
 
 const Account = () => {

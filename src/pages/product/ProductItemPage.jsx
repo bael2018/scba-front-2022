@@ -4,7 +4,7 @@ import { Filter } from "../../components/partials/Filter";
 import { breadCrumbPath } from "../../utilities/bread";
 import { BreadCrumb } from "../../components/partials/BreadCrumb";
 import { Skeleton } from "../../components/elements/skeletons/Skeleton";
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { toLower } from "../../utilities";
 import { ProductItemList } from "../../components/partials/ProductItemList";
 import { toArrayWithId } from "../../utilities/toArray";

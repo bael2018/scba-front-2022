@@ -2,11 +2,11 @@ import cls from "../../scss/components/partials/singleproductfooter.module.scss"
 import {
     useGetProductWishlistQuery,
     usePostProductWishlistMutation,
-} from "../../store/rtk-query/productWishlist";
+} from "../../store/query/productWishlist";
 import {
     useGetProductCartQuery,
     usePostProductCartMutation,
-} from "../../store/rtk-query/productCartApi";
+} from "../../store/query/productCartApi";
 import { toArrayWithId } from "../../utilities/toArray";
 import { AiFillHeart } from "react-icons/ai";
 import { useSelector } from "react-redux";

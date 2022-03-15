@@ -13,9 +13,9 @@ import { VscAccount } from "react-icons/vsc";
 import { MdToys } from "react-icons/md";
 import { CustomLink } from "../elements/CustomLink";
 import { currencyIcon } from "../../utilities/currencyIcon";
-import { useGetProductCartQuery } from "../../store/rtk-query/productCartApi";
+import { useGetProductCartQuery } from "../../store/query/productCartApi";
 import { toArrayWithId } from "../../utilities/toArray";
-import { useGetProductWishlistQuery } from "../../store/rtk-query/productWishlist";
+import { useGetProductWishlistQuery } from "../../store/query/productWishlist";
 import { HiMenuAlt2 } from "react-icons/hi";
 
 const NavigationDefault = () => {

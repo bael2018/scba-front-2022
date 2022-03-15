@@ -1,7 +1,7 @@
 import { SingleProductList } from "../../components/partials/SingleProductList";
 import { BreadCrumb } from "../../components/partials/BreadCrumb";
 import { useEffect } from "react";
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import { fillterByid } from "../../utilities/fillters";
 import { useSelector } from "react-redux";
 import { useState } from "react";

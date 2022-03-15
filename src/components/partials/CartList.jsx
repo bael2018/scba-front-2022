@@ -1,5 +1,5 @@
-import { useGetProductCartQuery } from "../../store/rtk-query/productCartApi";
-import { useGetProductsQuery } from "../../store/rtk-query/productsApi";
+import { useGetProductCartQuery } from "../../store/query/productCartApi";
+import { useGetProductsQuery } from "../../store/query/productsApi";
 import cls from "../../scss/components/partials/cartlist.module.scss";
 import { setCartModalActive } from "../../store/slices/generalSlice";
 import { toArrayWithId } from "../../utilities/toArray";

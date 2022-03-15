@@ -3,11 +3,11 @@ import generalReducer from "./slices/generalSlice";
 import productItemReducer from "./slices/productItemSlice";
 import authReducer from "./slices/authSlice";
 import modalReducer from "./slices/modalSlice";
-import { userApi } from "./rtk-query/usersApi";
-import { categoryApi } from "./rtk-query/categoryApi";
-import { productsApi } from "./rtk-query/productsApi";
-import { productCartApi } from "./rtk-query/productCartApi";
-import { productWishlist } from "./rtk-query/productWishlist";
+import { userApi } from "./query/usersApi";
+import { categoryApi } from "./query/categoryApi";
+import { productsApi } from "./query/productsApi";
+import { productCartApi } from "./query/productCartApi";
+import { productWishlist } from "./query/productWishlist";
 
 export const store = configureStore({
     reducer: {
