@@ -7,10 +7,12 @@ import { CartHeader } from "../elements/CartHeader";
 import { CartItem } from "../elements/CartItem";
 import { Empty } from "./Empty";
 import { useDispatch } from "react-redux";
+import { rootContant } from "../../constants";
 
 const CartList = () => {
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const { data: productData } = useGetProductsQuery();
-    const { data } = useGetProductCartQuery();
+    const { data } = useGetProductCartQuery(userToken);
     const dispatch = useDispatch();
 
     const confirmBtnHandler = () => {

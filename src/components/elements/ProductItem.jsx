@@ -19,12 +19,13 @@ import { toArrayWithId } from "../../utilities/toArray";
 import { mathCurrency } from "../../utilities";
 
 const ProductItem = ({ product, path }) => {
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const state = useSelector((state) => state.general.currency);
     const view = useSelector((state) => state.product_item.view);
-    const { data: wishlistData } = useGetProductWishlistQuery();
+    const { data: wishlistData } = useGetProductWishlistQuery(userToken);
     const [postWishlist] = usePostProductWishlistMutation();
     const { isAuth } = useSelector((state) => state.auth);
-    const { data: cartData } = useGetProductCartQuery();
+    const { data: cartData } = useGetProductCartQuery(userToken);
     const [postCart] = usePostProductCartMutation();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -32,9 +33,6 @@ const ProductItem = ({ product, path }) => {
     const { mainImage, price, discountPrice, title, id } = product;
 
     const productHandler = async (path) => {
-        const userToken = JSON.parse(
-            sessionStorage.getItem(rootContant.userToken)
-        );
         if (userToken) {
             if (path === "cart") {
                 await postCart({
@@ -55,12 +53,10 @@ const ProductItem = ({ product, path }) => {
     };
 
     const activeIconHandler = (data) => {
-        return toArrayWithId(data).map(
-            ({ productId }) => {
-                return ` ${productId === id && cls.item_btn} `;
-            }
-        )
-    }
+        return toArrayWithId(data).map(({ productId }) => {
+            return ` ${productId === id && cls.item_btn} `;
+        });
+    };
 
     return (
         <section className={view ? `${cls.item} ${cls.item_alt}` : cls.item}>

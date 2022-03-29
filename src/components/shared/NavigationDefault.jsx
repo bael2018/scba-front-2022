@@ -17,12 +17,14 @@ import { useGetProductCartQuery } from "../../store/query/productCartApi";
 import { toArrayWithId } from "../../utilities/toArray";
 import { useGetProductWishlistQuery } from "../../store/query/productWishlist";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { rootContant } from "../../constants";
 
 const NavigationDefault = () => {
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const state = useSelector((state) => state.general.currency);
     const { isAuth } = useSelector((state) => state.auth);
-    const { data } = useGetProductCartQuery();
-    const { data: wishlistData } = useGetProductWishlistQuery();
+    const { data } = useGetProductCartQuery(userToken);
+    const { data: wishlistData } = useGetProductWishlistQuery(userToken);
     const dispatch = useDispatch();
 
     const burgerHandler = () => {

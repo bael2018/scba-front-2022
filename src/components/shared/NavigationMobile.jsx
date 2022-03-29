@@ -4,6 +4,7 @@ import { MdToys } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { rootContant } from "../../constants";
 import cls from "../../scss/components/mobilenav.module.scss";
 import { useGetProductCartQuery } from "../../store/query/productCartApi";
 import { useGetProductWishlistQuery } from "../../store/query/productWishlist";
@@ -12,10 +13,11 @@ import { toArrayWithId } from "../../utilities/toArray";
 import { CustomLink } from "../elements/CustomLink";
 
 const NavigationMobile = () => {
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const { isBurgerMenu } = useSelector((state) => state.general);
-    const { data: wishlistData } = useGetProductWishlistQuery();
+    const { data: wishlistData } = useGetProductWishlistQuery(userToken);
     const { isAuth } = useSelector((state) => state.auth);
-    const { data } = useGetProductCartQuery();
+    const { data } = useGetProductCartQuery(userToken);
     const dispatch = useDispatch();
 
     const burgerHandler = () => {

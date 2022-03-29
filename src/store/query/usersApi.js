@@ -10,10 +10,8 @@ export const userApi = createApi({
     }),
     endpoints: (builder) => ({
         getUser: builder.query({
-            query: () =>
-                `users/${JSON.parse(
-                    sessionStorage.getItem(rootContant.userToken)
-                )}/about${rootContant.dotJson}`,
+            query: (userToken) =>
+                `users/${userToken}/about${rootContant.dotJson}`,
             providesTags: () => [rootTagType.USER_TAG],
         }),
         addUser: builder.mutation({

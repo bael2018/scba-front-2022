@@ -8,7 +8,8 @@ import { useGetUserQuery } from "../../store/query/usersApi";
 import { toArrayWithId } from "../../utilities/toArray";
 
 const Account = () => {
-    const { data } = useGetUserQuery();
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
+    const { data } = useGetUserQuery(userToken);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

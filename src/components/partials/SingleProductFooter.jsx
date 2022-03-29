@@ -14,17 +14,15 @@ import { rootContant } from "../../constants";
 import { useNavigate } from "react-router-dom";
 
 const SingleProductFooter = ({ id }) => {
-    const { data: wishlistData } = useGetProductWishlistQuery();
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
+    const { data: wishlistData } = useGetProductWishlistQuery(userToken);
     const [postWishlist] = usePostProductWishlistMutation();
     const { isAuth } = useSelector((state) => state.auth);
-    const { data: cartData } = useGetProductCartQuery();
+    const { data: cartData } = useGetProductCartQuery(userToken);
     const [postCart] = usePostProductCartMutation();
     const navigate = useNavigate();
 
     const productHandler = async (item, path) => {
-        const userToken = JSON.parse(
-            sessionStorage.getItem(rootContant.userToken)
-        );
         if (userToken) {
             if (path === "cart") {
                 await postCart({

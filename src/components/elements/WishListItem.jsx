@@ -19,7 +19,7 @@ const WishlistItem = ({
     const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const [deleteProduct] = useDeleteProductWishlistMutation();
     const [postCart] = usePostProductCartMutation();
-    const { data } = useGetProductCartQuery();
+    const { data } = useGetProductCartQuery(userToken);
 
     const productHandler = async (path) => {
         if (path === "cart") {
@@ -39,11 +39,9 @@ const WishlistItem = ({
 
     const activeIconHandler = () => {
         return toArrayWithId(data).map(({ productId }) => {
-            return ` ${
-                productId === id && cls.select_body_active
-            } `;
-        })
-    }
+            return ` ${productId === id && cls.select_body_active} `;
+        });
+    };
 
     return (
         <div className={cls.select}>

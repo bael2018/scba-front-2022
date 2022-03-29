@@ -6,10 +6,12 @@ import { CartList } from "../../components/partials/CartList";
 import { Redirect } from "../../components/partials/Redirect";
 import cls from "../../scss/page/cart.module.scss";
 import { useSelector } from "react-redux";
+import { rootContant } from "../../constants";
 
 const Cart = () => {
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
     const { isAuth } = useSelector((state) => state.auth);
-    const { isLoading } = useGetProductCartQuery();
+    const { isLoading } = useGetProductCartQuery(userToken);
 
     const breadCrumb = [
         {

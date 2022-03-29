@@ -9,9 +9,11 @@ import { useSelector } from "react-redux";
 import { Empty } from "../../components/partials/Empty";
 import { Redirect } from "../../components/partials/Redirect";
 import { PagesTitle } from "../../components/elements/PagesTitle";
+import { rootContant } from "../../constants";
 
 const Wishlist = () => {
-    const { data, isLoading } = useGetProductWishlistQuery();
+    const userToken = JSON.parse(sessionStorage.getItem(rootContant.userToken));
+    const { data, isLoading } = useGetProductWishlistQuery(userToken);
     const { data: productData } = useGetProductsQuery();
     const { isAuth } = useSelector((state) => state.auth);
 
